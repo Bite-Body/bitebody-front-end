@@ -13,12 +13,12 @@ class Landing extends Component {
 
           <div className="row">
             <div className="col-sm-12 mx-auto">
-              <h1 className="text-center" style={welcome}>Welcome to Virgil's Travels!</h1>
+              <h1 className="text-center" style={welcome}>Welcome to BiteBody.xyz!</h1>
               <hr/>
-              <p>Our web application is intended to make exercising easy to do and highly accessible!</p>
+              <p><center>Our web application is intended to make exercising easy to do and highly accessible!</center></p>
             </div>
           </div>
-          
+
         </div>
       </div>
     )

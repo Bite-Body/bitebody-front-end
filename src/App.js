@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { BrowserRouter as Router, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom'
 
 import Navbar from './components/Navbar'
 import Landing from './components/Landing'
@@ -11,10 +11,12 @@ class App extends Component {
       <Router>
         <div className="App">
           <Navbar />
-          <Route exact path="/" component={Landing} />
+          <Switch>
+            <Route exact path="/" component={Landing} />
 
-          <Route path="*" component={FourOhFour} />
-          <Redirect from="*" to="/404" />
+            <Route path="*" component={FourOhFour} />
+            <Redirect from="*" to="/404" />
+          </Switch>
         </div>
       </Router>
     )
