@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-d
 
 import Navbar from './components/Navbar'
 import Landing from './components/Landing'
+import Footer from './components/Footer'
 import FourOhFour from './components/404'
 
 class App extends Component {
@@ -17,6 +18,7 @@ class App extends Component {
             <Route path="*" component={FourOhFour} />
             <Redirect from="*" to="/404" />
           </Switch>
+          <Footer/>
         </div>
       </Router>
     )
