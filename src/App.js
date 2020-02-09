@@ -5,6 +5,8 @@ import Navbar from './components/Navbar'
 import Landing from './components/Landing'
 import Footer from './components/Footer'
 import FourOhFour from './components/404'
+import Login from './components/Login'
+import Register from './components/Register'
 
 class App extends Component {
   render() {
@@ -14,7 +16,8 @@ class App extends Component {
           <Navbar />
           <Switch>
             <Route exact path="/" component={Landing} />
-
+            <Route exact path="/login" component={Login} />
+            <Route exact path="/register" component={Register} />
             <Route path="*" component={FourOhFour} />
             <Redirect from="*" to="/404" />
           </Switch>
