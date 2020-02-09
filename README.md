@@ -17,7 +17,7 @@ git --version
 ```
 2. Clone the GitHub repository.
 ```
-git clone https://github.com/Project-RHR/Front-end.git
+git clone https://github.com/Bite-Body/bitebody-front-end.git
 ```
 
 ##  Verify Prerequisites
@@ -31,7 +31,7 @@ npm -version
 
 1. Change directory (cd) into the project folder.
 ```
-cd Front-end
+cd bitebody-front-end
 ```
 2. Install Node.js dependencies. 
 ```
