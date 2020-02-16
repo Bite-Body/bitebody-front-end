@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import bryan from '../../static/images/bryan.png'
 import david from '../../static/images/david.png'
-import BBLogo from '../../static/images/BiteBody_Logo.png'
-import malik from '../../static/images/malik.jpg'
+import BBLogo from '../../static/images/BiteBody_Logo_Navbar.png'
+import malik from '../../static/images/malik.png'
 import hector from '../../static/images/hector.png'
 
 
