@@ -11,7 +11,7 @@ class About extends Component {
               <h1 class = "h1"><center>About us</center></h1>
               <hr></hr>
               <p>
-              <center>Our application, BiteBpdy, aims to provide an interactive, all encompassing 
+              <center>Our application, BiteBody, aims to provide an interactive, all encompassing 
                 Fitness Lifestyle site that provides users with various options other sites may lack. The site itself was created by
                 a group of 4 computer science students attending California State University Long Beach.
                 Our team consists of Bryan Rojas, David Ibarra, Hector Mendoza, and 
