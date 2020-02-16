@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-axios.defaults.baseURL = 'http://api.bitebody.xyz'
+axios.defaults.baseURL = 'https://gentle-inlet-25364.herokuapp.com'
 
 export const register = newUser => {
   return axios
