@@ -1,5 +1,6 @@
 import React from "react";
 import { MDBCol, MDBContainer, MDBRow, MDBFooter } from "mdbreact";
+import {Link} from 'react-router-dom';
 
 const FooterPagePro = () => {
   return (
@@ -24,10 +25,12 @@ const FooterPagePro = () => {
             </h5>
             <ul className="list-unstyled">
               <li>
-              <a href= "/about">About</a>
+              <Link to="/faq">
+              FAQ
+              </Link>
               </li>
               <li>
-                <a href="/faq">FAQ</a>
+                <a href="/about">About</a>
               </li>
               <li>
                 <a href="/documentation">Documentation</a>
