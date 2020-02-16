@@ -21,7 +21,7 @@ const FooterPagePro = () => {
           <hr className="clearfix w-100 d-md-none" />
           <MDBCol md="2">
             <h5 className="text-uppercase mb-4 mt-3 font-weight-bold">
-              Links
+              Why us?
             </h5>
             <ul className="list-unstyled">
               <li>
@@ -49,21 +49,19 @@ const FooterPagePro = () => {
           <hr className="clearfix w-100 d-md-none" />
           <MDBCol md="2">
             <h5 className="text-uppercase mb-4 mt-3 font-weight-bold">
-              Links
+              Social Media
             </h5>
             <ul className="list-unstyled">
               <li>
-                <a href="#!">Link 1</a>
+                <a href="#!">Facebook</a>
               </li>
               <li>
-                <a href="#!">Link 2</a>
+                <a href="#!">Instagram</a>
               </li>
               <li>
-                <a href="#!">Link 3</a>
+                <a href="#!">Twitter</a>
               </li>
-              <li>
-                <a href="#!">Link 4</a>
-              </li>
+              
             </ul>
           </MDBCol>
           <hr className="clearfix w-100 d-md-none" />
