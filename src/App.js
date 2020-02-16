@@ -28,6 +28,7 @@ class App extends Component {
             <Route exact path="/documentation" component={Documentation} />
             <Route exact path="/Team" component={Team} />
             <Route path="*" component={FourOhFour} />
+            
             <Redirect from="*" to="/404" />
           </Switch>
           <Footer/>
