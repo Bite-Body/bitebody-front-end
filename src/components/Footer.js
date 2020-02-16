@@ -25,18 +25,24 @@ const FooterPagePro = () => {
             </h5>
             <ul className="list-unstyled">
               <li>
+              <Link to="/About">
+              About
+              </Link>
+              </li>
+              <li>
               <Link to="/faq">
               FAQ
               </Link>
               </li>
               <li>
-                <a href="/about">About</a>
+              <Link to="/Documentation">
+              Documentation
+              </Link>
               </li>
               <li>
-                <a href="/documentation">Documentation</a>
-              </li>
-              <li>
-                <a href="/Team">Team</a>
+              <Link to="/Team">
+              Team
+              </Link>
               </li>
             </ul>
           </MDBCol>
