@@ -1,10 +1,10 @@
 import axios from 'axios'
 
-axios.defaults.baseURL = 'http://localhost:5000'
+axios.defaults.baseURL = 'http://api.bitebody.xyz'
 
 export const register = newUser => {
   return axios
-    .post('users/register', {
+    .post('users', {
       first_name: newUser.first_name,
       last_name: newUser.last_name,
       email: newUser.email,
@@ -22,7 +22,12 @@ export const login = user => {
       password: user.password
     })
     .then(response => {
-      localStorage.setItem('usertoken', response.data)
+      if(response.data["error"] === "nah"){
+        localStorage.setItem('usertoken', response.data)
+        console.log(response.data)
+        return response.data
+      }
+      console.log(response.data)
       return response.data
     })
     .catch(err => {

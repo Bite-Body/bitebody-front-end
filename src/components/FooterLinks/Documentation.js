@@ -1,4 +1,4 @@
-import React, { Component, PureComponent } from 'react'
+import React, { Component } from 'react'
 //import dd from '../../static/Documents/Design_Documentation.pdf'
 import brd from '../../static/Documents/Business_Requirements.pdf'
 

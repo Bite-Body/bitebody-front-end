@@ -7,7 +7,7 @@ class Login extends Component {
     this.state = {
       email: '',
       password: '',
-      errors: {}
+      errors: ''
     }
 
     this.onChange = this.onChange.bind(this)
@@ -19,6 +19,7 @@ class Login extends Component {
   }
 
   onSubmit(e) {
+
     e.preventDefault()
 
     const user = {
@@ -27,8 +28,12 @@ class Login extends Component {
     }
 
     login(user).then(res => {
-      if (!res.error) {
-        this.props.history.push(`/profile`)
+      if (res.error === "yep") {
+        this.props.history.push('/login')
+        this.setState({errors: 'Wrong email or password...'})
+      }
+      else{
+        this.props.history.push('/')
       }
     })
   }
@@ -38,6 +43,9 @@ class Login extends Component {
       <div className="container">
         <div className="row">
           <div className="col-md-6 mt-5 mx-auto">
+
+            <p style={{color: 'red'}}>{this.state.errors}</p>
+
             <form noValidate onSubmit={this.onSubmit}>
               <h1 className="h3 mb-3 font-weight-normal">Please sign in</h1>
               <div className="form-group">
