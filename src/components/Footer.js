@@ -25,7 +25,7 @@ const FooterPagePro = () => {
             </h5>
             <ul className="list-unstyled">
               <li>
-              <Link to="/About">
+              <Link to="/about">
               About
               </Link>
               </li>
@@ -35,12 +35,12 @@ const FooterPagePro = () => {
               </Link>
               </li>
               <li>
-              <Link to="/Documentation">
+              <Link to="/documentation">
               Documentation
               </Link>
               </li>
               <li>
-              <Link to="/Team">
+              <Link to="/team">
               Team
               </Link>
               </li>

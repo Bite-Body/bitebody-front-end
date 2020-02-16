@@ -1,5 +1,6 @@
 import React, { Component, PureComponent } from 'react'
-import pdf from '../../static/documents/Sprints.pdf'
+//import dd from '../../static/Documents/Design_Documentation.pdf'
+import brd from '../../static/Documents/Business_Requirements.pdf'
 
 
 
@@ -28,7 +29,8 @@ class Docu extends Component {
           <hr/>
           <h3>Click Below for deliverables.</h3>
           <hr/>
-          <a href={pdf} >Documentation PDF</a>
+         {//<a href={dd} >IM A BOT</a> <br/>
+          } <a href={brd} >IM A BADGER</a>
           
 
           
