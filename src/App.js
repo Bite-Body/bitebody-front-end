@@ -7,7 +7,11 @@ import Footer from './components/Footer'
 import FourOhFour from './components/404'
 import Login from './components/Login'
 import Register from './components/Register'
-import FAQ from './components/Footer Links/FAQ'
+import faq from './components/FooterLinks/FAQ'
+import about from './components/FooterLinks/About'
+import Documentation from './components/FooterLinks/Documentation'
+import Team from './components/FooterLinks/Team'
+
 
 class App extends Component {
   render() {
@@ -19,8 +23,12 @@ class App extends Component {
             <Route exact path="/" component={Landing} />
             <Route exact path="/login" component={Login} />
             <Route exact path="/register" component={Register} />
+            <Route exact path="/faq" component={faq} />
+            <Route exact path="/about" component={about} />
+            <Route exact path="/documentation" component={Documentation} />
+            <Route exact path="/Team" component={Team} />
             <Route path="*" component={FourOhFour} />
-            <Route exact path="/faq" component={FAQ} />
+            
             <Redirect from="*" to="/404" />
           </Switch>
           <Footer/>
