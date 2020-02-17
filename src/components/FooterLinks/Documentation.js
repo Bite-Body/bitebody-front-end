@@ -30,7 +30,7 @@ class Docu extends Component {
           <h3>Click Below for deliverables.</h3>
           <hr/>
          {//<a href={dd} >IM A BOT</a> <br/>
-          } <a href={brd} >IM A BADGER</a>
+          } <a href={brd} >Business Requirements Document</a>
           
 
           
