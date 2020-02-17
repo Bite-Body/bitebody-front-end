@@ -10,12 +10,10 @@ const FooterPagePro = () => {
         <MDBRow>
           <MDBCol md="6">
             <h5 className="text-uppercase mb-4 mt-3 font-weight-bold">
-              Footer Content
+              Bitebody Footer
             </h5>
             <p>
-              Here you can use rows and columns here to organize your footer
-              content. Lorem ipsum dolor sit amet, consectetur adipisicing
-              elit.
+              Be sure to checkout all the following links for our important links, social medias, and misc.
             </p>
           </MDBCol>
           <hr className="clearfix w-100 d-md-none" />

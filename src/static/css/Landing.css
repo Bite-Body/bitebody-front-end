@@ -1,12 +1,14 @@
 #landing{
-    background-image: url(../images/Wallpaper_Landing_1.png);
+    background-color: white;
     background-repeat: repeat;
     position: relative;
     background-position: 50% 50%;
-    color: white;
+    color: rgb(0, 0, 0);
     padding: 2em 0 2em 0;
-    min-height: 50em;
+    min-height: 10em;
+    /*
     text-shadow: 0px 4px 3px rgba(0,0,0,0.4),
              0px 8px 13px rgba(0,0,0,0.1),
              0px 18px 23px rgba(0,0,0,0.1);
+    */
 }

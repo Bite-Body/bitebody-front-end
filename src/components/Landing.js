@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import '../static/css/Landing.css'
+import screenshot from '../static/images/iphone_scr.png' 
 
 var welcome = {
   fontSize: 50
@@ -16,6 +17,34 @@ class Landing extends Component {
               <h1 className="text-center" style={welcome}>Welcome to BiteBody.xyz!</h1>
               <hr/>
               <p><center>Our web application is intended to make exercising easy to do and highly accessible!</center></p>
+              <br/>
+            </div>
+          </div>
+
+
+          <div className="row">
+            <div className="col-sm-2 mx-auto">
+              <br/>
+            </div>
+
+            <div className="col-sm-4 mx-auto">
+
+              <center><img src={screenshot} alt="Bitebody Iphone" height="500px"></img></center>
+
+            </div>
+            <div className="col-sm-4 mx-auto">
+              <br/>
+              <br/>
+              <br/>
+              <br/>
+              <br/>
+              <br/>
+              <center><p><h3>Our application is accessible on mobile view as well!</h3></p></center>
+
+            </div>
+
+            <div className="col-sm-2 mx-auto">
+              <br/>
             </div>
           </div>
 
