@@ -65,20 +65,20 @@ const FooterPagePro = () => {
           <hr className="clearfix w-100 d-md-none" />
           <MDBCol md="2">
             <h5 className="text-uppercase mb-4 mt-3 font-weight-bold">
-              Links
+              More Coming Soon!
             </h5>
             <ul className="list-unstyled">
               <li>
-                <a href="#!">Link 1</a>
+                <a href="#!">TOS</a>
               </li>
               <li>
-                <a href="#!">Link 2</a>
+                <a href="#!">NEW</a>
               </li>
               <li>
-                <a href="#!">Link 3</a>
+                <a href="#!">Goals</a>
               </li>
               <li>
-                <a href="#!">Link 4</a>
+                <a href="#!">Features</a>
               </li>
             </ul>
           </MDBCol>
