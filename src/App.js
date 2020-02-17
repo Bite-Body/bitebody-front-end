@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom'
+import { BrowserRouter as HashRouter, Route, Switch, Redirect } from 'react-router-dom'
 
 import Navbar from './components/Navbar'
 import Landing from './components/Landing'
@@ -16,14 +16,13 @@ import MealPlanner from './components/MealPlanner/MealPlanner'
 class App extends Component {
   render() {
     return (
-      <Router>
+      <HashRouter>
         <div className="App">
           <Navbar />
           <Switch>
             <Route exact path="/" component={Landing} />
             <Route exact path="/login" component={Login} />
             <Route exact path="/register" component={Register} />
-            <Route exact path="/meal-planner" component={Register} />
             <Route exact path="/faq" component={FAQ} />
             <Route exact path="/about" component={About} />
             <Route exact path="/documentation" component={Documentation} />
@@ -35,7 +34,7 @@ class App extends Component {
           </Switch>
           <Footer/>
         </div>
-      </Router>
+      </HashRouter>
     )
   }
 }

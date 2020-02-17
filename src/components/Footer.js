@@ -10,10 +10,10 @@ const FooterPagePro = () => {
         <MDBRow>
           <MDBCol md="6">
             <h5 className="text-uppercase mb-4 mt-3 font-weight-bold">
-              Bitebody Footer
+              Bitebody 💪🏽
             </h5>
             <p>
-              Be sure to checkout all the following links for our important links, social medias, and misc.
+              Be sure to checkout all the following links for our important links, social media, etc.
             </p>
           </MDBCol>
           <hr className="clearfix w-100 d-md-none" />
@@ -47,7 +47,7 @@ const FooterPagePro = () => {
           <hr className="clearfix w-100 d-md-none" />
           <MDBCol md="2">
             <h5 className="text-uppercase mb-4 mt-3 font-weight-bold">
-              Social Media
+              Social
             </h5>
             <ul className="list-unstyled">
               <li>
@@ -88,14 +88,18 @@ const FooterPagePro = () => {
       <div className="text-center py-3">
         <ul className="list-unstyled list-inline mb-0">
           <li className="list-inline-item">
-            <h5 className="mb-1">Register for free</h5>
+            <h5 className="mb-1">Register for free!</h5>
           </li>
+        
+        <br/><br/>
+
           <li className="list-inline-item">
-            <a href="#!" className="btn btn-danger btn-rounded">
-              Sign up!
-            </a>
-          </li>
+              <Link to="/register" className="btn btn-danger btn-rounded">
+                Sign up!
+              </Link>
+            </li>
         </ul>
+
       </div>
       <hr />
       <div className="text-center">
