@@ -38,7 +38,7 @@ class Navbar extends Component {
             <Link class="dropdown-item" to="/">Create Workouts</Link>
             <Link class="dropdown-item" to="/">Workout Plans</Link>
             <div class="dropdown-divider"></div>
-            <Link class="dropdown-item" to="/">Meal Planner</Link>
+            <Link class="dropdown-item" to="/meal-planner">Meal Planner</Link>
             <Link class="dropdown-item" to="/">Calorie Calculator</Link>
           </div>
         </li>
@@ -59,7 +59,7 @@ class Navbar extends Component {
     return (
       <nav className="navbar navbar-expand-sm navbar-dark bg-dark">
       <div className="container">
-      <Link class="navbar-brand" href="/"><img alt="logo" src={headerLogo} height="40px"></img></Link>
+      <Link class="navbar-brand" to="/"><img alt="logo" src={headerLogo} height="40px"></img></Link>
         <button
           className="navbar-toggler"
           type="button"
