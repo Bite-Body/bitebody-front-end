@@ -7,6 +7,11 @@ var welcome = {
 };
 
 class Landing extends Component {
+
+  componentDidMount() {
+    document.title = "Bitebody - Home Page"
+  }
+
   render() {
     return (
       <div id="landing">
