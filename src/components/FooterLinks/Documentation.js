@@ -6,15 +6,14 @@ import brd from '../../static/Documents/Business_Requirements.pdf'
 
 
 class Docu extends Component {
-  
+  componentDidMount() {
+    document.title = "Bitebody - Documentation"
+  }
 
   render() {
     
     return (
       
-        
-      
-          
         <div className="container">
           
           <br/><br/>

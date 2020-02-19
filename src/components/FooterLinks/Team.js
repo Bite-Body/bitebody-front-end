@@ -9,7 +9,9 @@ import hector from '../../static/images/hector.png'
 import Card from '../Cards/CardUi'
 
 class Team extends Component {
-
+  componentDidMount() {
+    document.title = "Bitebody - Team"
+  }
   render() {
     return (
     <div className = "container">

@@ -34,6 +34,9 @@ class Register extends Component {
     })
   }
 
+  componentDidMount() {
+    document.title = "Bitebody - Register"
+  }
   render() {
     return (
       <div className="container">
