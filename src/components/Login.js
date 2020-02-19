@@ -38,10 +38,6 @@ class Login extends Component {
     })
   }
 
-  componentDidMount() {
-    document.title = "Bitebody - Login"
-  }
-
   render() {
     return (
       <div className="container">

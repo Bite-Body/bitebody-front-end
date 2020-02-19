@@ -10,7 +10,7 @@ const FooterPagePro = () => {
         <MDBRow>
           <MDBCol md="6">
             <h5 className="text-uppercase mb-4 mt-3 font-weight-bold">
-              Bitebody 💪🏽
+              Bitebody <span role="img" aria-label="muscle">💪🏽</span>
             </h5>
             <p>
               Be sure to checkout all the following links for our important links, social media, etc.

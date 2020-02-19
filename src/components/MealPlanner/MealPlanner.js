@@ -85,7 +85,7 @@ class MealPlanner extends Component {
                     <br/>
 
                     </div>
-                      <button type="submit" className="btn btn-primary">🥪 Generate Meal Plan</button>
+                      <button type="submit" className="btn btn-primary"> <span role="img" aria-label="sandwich">🥪</span> Generate Meal Plan</button>
                     </center>
                
                     </form>
