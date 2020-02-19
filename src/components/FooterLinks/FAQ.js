@@ -1,6 +1,9 @@
 import React, { Component } from 'react'
 
 class FAQ extends Component {
+  componentDidMount() {
+    document.title = "Bitebody - FAQ"
+  }
   render() {
     return (
 
@@ -37,7 +40,7 @@ class FAQ extends Component {
             <h4 class = "lj">General</h4>
               <ol>
                 <li>
-                  <a href = "#What-is-Virgil"><u>What is BiteBody?</u></a>
+                  <a href = "#What-is-BiteBody"><u>What is BiteBody?</u></a>
                   </li>
 
                 <li>
@@ -147,7 +150,7 @@ class FAQ extends Component {
                   <hr></hr>
                 </dl>
               
-              <dl id = "Forgot-email" data-test-id = "faqEntry">
+              <dl id = "Forgot-Email" data-test-id = "faqEntry">
                   <dd>
                     <abbr title = "Question">Q:</abbr>
                     <h6><b>I lost/forgot my email, what do I do?</b></h6>

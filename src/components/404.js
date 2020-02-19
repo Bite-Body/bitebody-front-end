@@ -1,6 +1,10 @@
 import React, { Component } from 'react'
 
 class FourOhFour extends Component {
+  
+  componentDidMount() {
+    document.title = "404"
+  }
   render() {
     return (
       <div className="container">
