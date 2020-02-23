@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
-import bryan from '../../static/images/bryan.png'
-import david from '../../static/images/david.png'
+import bryan from '../../static/images/BryanBB.png'
+import david from '../../static/images/DavidBB.png'
 import BBLogo from '../../static/images/BiteBody_Logo_Navbar.png'
-import malik from '../../static/images/malik.png'
-import hector from '../../static/images/hector.png'
+import malik from '../../static/images/MalikBB.jpg'
+import hector from '../../static/images/HectorBB.png'
 
 
 import Card from '../Cards/CardUi'
@@ -35,32 +35,32 @@ class Team extends Component {
         <div className = "col-lg-4">
         <br/>
           <Card name ="David Ibarra" imgsrc = {david} title = "David Ibarra" 
-          text ="Hey my name is David Ibarra, " 
+          text ="Hey my name is David Ibarra, and I've enjoyed my time learning code at CSULB" 
           emailLink = "iDavid9764@gmail.com"/>
         </div>
         
         <div className = "col-lg-4">
         <br/>
           <Card name ="Bryan Rojas" imgsrc = {bryan} title = "Bryan Rojas" 
-          text ="Hey my name is Bryan Rojas. Please ask me about how my multiple interviews with Microsoft went!" 
+          text ="Hey my name is Bryan Rojas. I am excited to be leading this team as they learn industry level technologies." 
           emailLink = "BryanRojacs@gmail.com"/>
         </div>
 
         <div className = "col-lg-4">
         <br/>
-          <Card imgsrc = {hector} title ="Hector Mendoza" text = "Hey my name is Hector Mendoza, part time coder, full time Yu-Gi-Oh player."
+          <Card imgsrc = {hector} title ="Hector Mendoza" text = "Hey my name is Hector Mendoza, and I am ecstatic to put my coding skills into practice for our final project."
           emailLink = "mendozahector555@gmail.com"/>
         </div>
         
         <div className = "col-lg-4">
         <br/>
-          <Card imgsrc = {malik} title = "Malik Coleman" text = "Hey my name is Malik Coleman and I do NOT want to be a rapper when I grow up. Don't believe anything Mr. Nguyen says."
+          <Card imgsrc = {malik} title = "Malik Coleman" text = "Hey my name is Malik Coleman and I am looking forward to delivering on our app's vision."
           emailLink = "malikai711@gmail.com"/>
         </div>
 
         <div className = "col-lg-4">
         <br/>
-          <Card imgsrc = {BBLogo} title ="Team Late" text = "Everyone here is a part of the team! We all worked on this site together!"
+          <Card imgsrc = {BBLogo} title ="Team Late" text = "Everyone here is a part of the team! We all worked on this site together! This website would not be possible without Fei's instructing, Maik's vision, David's management, Hector's adaptability, and Bryan's leadership. We look forward to continuing this website in the hopes of learning frameworks, tools, languages, best practices, and most important of all: Working together in a team to provide a quality product. "
           emailLink = "BiteBodyXYZ@gmail.com"/>
         
         </div>
