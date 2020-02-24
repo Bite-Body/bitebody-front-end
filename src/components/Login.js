@@ -29,7 +29,7 @@ class Login extends Component {
 
     login(user).then(res => {
       if (res.Allow === "yes") {
-        this.props.history.push('/profile')
+        this.props.history.push('/')
       }
       else{
         this.props.history.push('/login')
