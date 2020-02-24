@@ -12,7 +12,7 @@ import About from './components/FooterLinks/About'
 import Documentation from './components/FooterLinks/Documentation'
 import Team from './components/FooterLinks/Team'
 import MealPlanner from './components/MealPlanner/MealPlanner'
-import Profile from './components/Profile/profile'
+import Profile from './components/Profile/Profile'
 
 class App extends Component {
   render() {
@@ -29,7 +29,7 @@ class App extends Component {
             <Route exact path="/documentation" component={Documentation} />
             <Route exact path="/team" component={Team} />
             <Route exact path="/meal-planner" component={MealPlanner} />
-
+            <Route exact path="/profile" component={Profile} />
             <Route path="*" component={FourOhFour} />
             <Redirect from="*" to="/404" />
           </Switch>
