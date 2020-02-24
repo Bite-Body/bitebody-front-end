@@ -12,6 +12,7 @@ import About from './components/FooterLinks/About'
 import Documentation from './components/FooterLinks/Documentation'
 import Team from './components/FooterLinks/Team'
 import MealPlanner from './components/MealPlanner/MealPlanner'
+import Profile from './components/Profile/profile'
 
 class App extends Component {
   render() {
