@@ -28,12 +28,12 @@ class Login extends Component {
     }
 
     login(user).then(res => {
-      if (res.Allow === "no") {
-        this.props.history.push('/login')
-        this.setState({errors: res.Error})
+      if (res.Allow === "yes") {
+        this.props.history.push('/profile')
       }
       else{
-        this.props.history.push('/profile')
+        this.props.history.push('/login')
+        this.setState({errors: res.Error})
       }
     })
   }
