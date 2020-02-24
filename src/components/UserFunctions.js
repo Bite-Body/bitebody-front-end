@@ -22,7 +22,7 @@ export const login = user => {
       password: user.password
     })
     .then(response => {
-      if(response.data["Allow"] === "nyesah"){
+      if(response.data["Allow"] === "yes"){
         localStorage.setItem('usertoken', response.data)
         console.log(response.data)
         return response.data
