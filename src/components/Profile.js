@@ -1,39 +1,55 @@
 import React, { Component } from 'react'
 
-class About extends Component {
-  
+
+
+class Profile extends Component {
+  constructor() {
+    super()
+    this.state = {
+      first_name: '',
+      last_name: '',
+      email: '',
+      errors: {}
+    }
+  }
  
+
+  imageStyling = {
+    border: '2px solid black'
+  }
 
   render() {
     return (
-
-        <div className="container">
-          <br/><br/>
-          <div class = "centering" data-analytics-section = "Center">
-            <div class = "block center">
-              <h1 class = "h1"><center>About us</center></h1>
-              <hr></hr>
-              <p>
-              <center>Our application, BiteBody, aims to provide an interactive, all encompassing 
-                Fitness Lifestyle site that provides users with various options other sites may lack. The site itself was created by
-                a group of 4 computer science students attending California State University Long Beach.
-                Our team consists of Bryan Rojas, David Ibarra, Hector Mendoza, and 
-                Malik Coleman. This site is still in development, and we hope to see some great improvement
-                coming in the near future. Thanks for checking out our about us! We hope you stick around to
-                see our website progress! </center>
-              </p>
-              
-            </div>
+      <div className="container">
+       <br/>
+       <br/>
+          <div className="col-sm-8 mx-auto">
+            <h1 className="text-center">Bryanrojacs's Profile</h1>
           </div>
-          
-          
-         
 
-          <br/><br/><br/>
-        </div>
+          
 
+          <br/>
+          <table className="table col-md-6 mx-auto">
+            <tbody>
+              <tr>
+                <td>Bryan</td>
+                <td>{this.state.first_name}</td>
+              </tr>
+              <tr>
+                <td>Rojas</td>
+                <td>{this.state.last_name}</td>
+              </tr>
+              <tr>
+                <td>Bryanrojacs@gmail.com</td>
+                <td>{this.state.email}</td>
+              </tr>
+            </tbody>
+          </table>
+       
+      </div>
     )
   }
 }
 
-export default About
+export default Profile
