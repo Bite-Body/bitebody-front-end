@@ -66,6 +66,48 @@ class Calculator extends Component {
                     </div>
 
                     <br/>
+                    <div className="row">
+                      <div className="col-md-2" style={{marginTop: '0.5em', marginRight: '1em', marginLeft: '1em'}}>
+                        <label for="exampleFormControlSelect1">Gender</label>
+                      </div>
+                      <div className="col-md-8" style={{marginRight: '1em', marginLeft: '1em'}}>
+                        <select className="form-control" id="exampleFormControlSelect1">
+                          <option>Male</option>
+                          <option>Female</option>
+                        </select>
+                      </div>
+                    </div>
+
+                    <br/>
+
+                    <div className="row">
+                      <div className="col-md-2" style={{marginTop: '0.5em', marginRight: '1em', marginLeft: '1em'}}>
+                        <label for="exampleFormControlSelect1">Activity Level</label>
+                      </div>
+                      <div className="col-md-8" style={{marginRight: '1em', marginLeft: '1em'}}>
+                        <select className="form-control" id="exampleFormControlSelect1">
+                          <option>low</option>
+                          <option>Average</option>
+                          <option>High</option>
+                        </select>
+                      </div>
+                    </div>
+
+                    <br/>
+                    
+                    <div className="row">
+                      <div className="col-md-2" style={{marginTop: '0.5em', marginRight: '1em', marginLeft: '1em'}}>
+                        <label for="exampleFormControlSelect1">Goal</label>
+                      </div>
+                      <div className="col-md-8" style={{marginRight: '1em', marginLeft: '1em'}}>
+                        <select className="form-control" id="exampleFormControlSelect1">
+                          <option>lose weight</option>
+                          <option>Gain weight</option>
+                        </select>
+                      </div>
+                    </div>
+
+                    <br/>
 
                     <div className="row">
                       <div className="col-md-2" style={{marginTop: '0.5em', marginRight: '1em', marginLeft: '1em'}}>
