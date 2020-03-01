@@ -132,7 +132,7 @@ class Calculator extends Component {
                     <br/>
 
                     </div>
-                      <button type="submit" className="btn btn-primary"> <span role="img" aria-label="sandwich">🥪</span> Generate Calories!</button>
+                      <button type="submit" className="btn btn-primary"> <span role="img" aria-label="rice ball">🍙</span> Generate Calories!</button>
                     </center>
                
                     </form>
