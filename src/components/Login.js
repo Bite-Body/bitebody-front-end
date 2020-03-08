@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import LoadingOverlay from 'react-loading-overlay'
 import { login } from './UserFunctions'
 
 class Login extends Component {
@@ -7,8 +8,10 @@ class Login extends Component {
     this.state = {
       email: '',
       password: '',
-      errors: ''
+      errors: '',
+      loading: false
     }
+    
 
     this.onChange = this.onChange.bind(this)
     this.onSubmit = this.onSubmit.bind(this)
@@ -19,6 +22,7 @@ class Login extends Component {
   }
 
   onSubmit(e) {
+    this.setState({loading: true })
 
     e.preventDefault()
 
@@ -28,19 +32,30 @@ class Login extends Component {
     }
 
     login(user).then(res => {
+      console.log(res)
       if (res.Allow === "yes") {
         this.props.history.push('/')
       }
       else{
         this.props.history.push('/login')
         this.setState({errors: res.Error})
+        this.setState({loading: false })
       }
     })
   }
 
   render() {
+
     return (
+      <>
+      <LoadingOverlay
+      active={this.state.loading}
+      spinner
+      text='Signing in...'
+      >
       <div className="container">
+          
+        
         <div className="row">
           <div className="col-md-6 mt-5 mx-auto">
 
@@ -82,7 +97,11 @@ class Login extends Component {
         <br/>
         <br/>
         <br/>
+
+        
       </div>
+      </LoadingOverlay>
+      </>
     )
   }
 }
