@@ -14,6 +14,9 @@ import Team from './components/FooterLinks/Team'
 import MealPlanner from './components/MealPlanner/MealPlanner'
 import Profile from './components/Profile'
 import Calculator from './components/Calculator/Calculator'
+import Access from './components/FooterLinks/Accessibility'
+import Cookies from './components/FooterLinks/Cookies'
+import Privacy from './components/FooterLinks/Privacy'
 
 class App extends Component {
   render() {
@@ -32,6 +35,9 @@ class App extends Component {
             <Route exact path="/meal-planner" component={MealPlanner} />
             <Route exact path="/calculator" component={Calculator} />
             <Route exact path="/profile" component={Profile} />
+            <Route exact path="/Accessibility" component={Access} />
+            <Route exact path="/Cookies" component={Cookies} />
+            <Route exact path="/Privacy" component={Privacy} />
             <Route path="*" component={FourOhFour} />
             <Redirect from="*" to="/404" />
           </Switch>

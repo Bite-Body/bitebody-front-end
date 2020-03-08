@@ -47,17 +47,23 @@ const FooterPagePro = () => {
           <hr className="clearfix w-100 d-md-none" />
           <MDBCol md="2">
             <h5 className="text-uppercase mb-4 mt-3 font-weight-bold">
-              Social
+              More Info
             </h5>
             <ul className="list-unstyled">
               <li>
-                <a href="#!">Facebook</a>
+              <Link to="/Accessibility">
+              Accessibility
+              </Link>
               </li>
               <li>
-                <a href="#!">Instagram</a>
+              <Link to="/Cookies">
+              Cookies
+              </Link>
               </li>
               <li>
-                <a href="#!">Twitter</a>
+              <Link to="/Privacy">
+              Privacy
+              </Link>
               </li>
               
             </ul>
