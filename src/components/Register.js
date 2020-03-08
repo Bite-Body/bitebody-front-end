@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import LoadingOverlay from 'react-loading-overlay'
 import { register } from './UserFunctions'
 
 class Register extends Component {
@@ -9,7 +10,8 @@ class Register extends Component {
       last_name: '',
       email: '',
       password: '',
-      errors: {}
+      errors: '',
+      loading: false
     }
 
     this.onChange = this.onChange.bind(this)
@@ -20,6 +22,8 @@ class Register extends Component {
     this.setState({ [e.target.name]: e.target.value })
   }
   onSubmit(e) {
+    this.setState({loading: true})
+
     e.preventDefault()
 
     const newUser = {
@@ -29,19 +33,72 @@ class Register extends Component {
       password: this.state.password
     }
 
-    register(newUser).then(res => {
-      this.props.history.push(`/login`)
-    })
+    let valid = true
+
+    if(this.state.first_name === ''){
+      this.setState({errors: 'First name field is missing.\n'})
+      valid = false
+    }
+
+    if(this.state.last_name === ''){
+      this.setState({errors: 'Last name field is missing.'})
+      valid = false
+    }
+
+    if(this.state.email === ''){
+      this.setState({errors: 'Email field is missing.'})
+      valid = false
+    }
+
+    if(this.state.password === ''){
+      this.setState({errors: 'Password field is missing.'})
+      valid = false
+    }
+
+    if(valid){
+      register(newUser).then(res => {
+        try {
+          console.log(res)
+          if (res.code === 201) {
+            this.props.history.push('/login')
+          }
+          else{
+            this.props.history.push('/register')
+            this.setState({errors: res.Error})
+            this.setState({loading: false })
+          }
+        }
+        catch(error) {
+          console.log(error)
+          this.props.history.push('/register')
+          this.setState({loading: false })
+        }
+      })
+    }
+    else{
+      this.props.history.push('/register')
+      this.setState({loading: false })
+    }
   }
 
   componentDidMount() {
     document.title = "Bitebody - Register"
   }
+
   render() {
     return (
+      <>
+      <LoadingOverlay
+      active={this.state.loading}
+      spinner
+      text='Signing up...'
+      >
       <div className="container">
         <div className="row">
           <div className="col-md-6 mt-5 mx-auto">
+
+            <p style={{color: 'red'}}>{this.state.errors}</p>
+
             <form noValidate onSubmit={this.onSubmit}>
               <h1 className="h3 mb-3 font-weight-normal">Register</h1>
               <div className="form-group">
@@ -102,6 +159,8 @@ class Register extends Component {
         <br/>
         <br/>
       </div>
+      </LoadingOverlay>
+      </>
     )
   }
 }

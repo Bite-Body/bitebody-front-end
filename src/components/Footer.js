@@ -3,6 +3,27 @@ import { MDBCol, MDBContainer, MDBRow, MDBFooter } from "mdbreact";
 import {Link} from 'react-router-dom';
 
 const FooterPagePro = () => {
+
+  const signUpButton = (
+    <div className="text-center py-3">
+    <ul className="list-unstyled list-inline mb-0">
+      <li className="list-inline-item">
+        <h5 className="mb-1">Register for free!</h5>
+      </li>
+    
+    <br/><br/>
+
+      <li className="list-inline-item">
+          <Link to="/register" className="btn btn-danger btn-rounded">
+            Sign up!
+          </Link>
+        </li>
+    </ul>
+
+    <hr />
+    </div>
+  )
+
   return (
     <div className="container">
     <MDBFooter color="stylish-color-dark" className="page-footer font-small pt-4 mt-4">
@@ -91,23 +112,12 @@ const FooterPagePro = () => {
         </MDBRow>
       </MDBContainer>
       <hr />
-      <div className="text-center py-3">
-        <ul className="list-unstyled list-inline mb-0">
-          <li className="list-inline-item">
-            <h5 className="mb-1">Register for free!</h5>
-          </li>
-        
-        <br/><br/>
 
-          <li className="list-inline-item">
-              <Link to="/register" className="btn btn-danger btn-rounded">
-                Sign up!
-              </Link>
-            </li>
-        </ul>
+      {localStorage.usertoken ? null : signUpButton}
 
-      </div>
-      <hr />
+
+
+      
       <div className="text-center">
         <ul className="list-unstyled list-inline">
           <li className="list-inline-item">
