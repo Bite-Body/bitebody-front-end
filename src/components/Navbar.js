@@ -29,17 +29,17 @@ class Navbar extends Component {
     const userLink = (
       <>
 
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="/" role="button" aria-haspopup="true" aria-expanded="false">Features</a>
-          <div class="dropdown-menu">
-            <div class="dropdown-divider"></div>
-            <Link class="dropdown-item" to="/">Pick yo body part</Link>
-            <Link class="dropdown-item" to="/">Search Workouts</Link>
-            <Link class="dropdown-item" to="/">Create Workouts</Link>
-            <Link class="dropdown-item" to="/">Workout Plans</Link>
-            <div class="dropdown-divider"></div>
-            <Link class="dropdown-item" to="/meal-planner">Meal Planner</Link>
-            <Link class="dropdown-item" to="/calculator">Calorie Calculator</Link>
+        <li className="nav-item dropdown">
+          <a className="nav-link dropdown-toggle" data-toggle="dropdown" href="/" role="button" aria-haspopup="true" aria-expanded="false">Features</a>
+          <div className="dropdown-menu">
+            <div className="dropdown-divider"></div>
+            <Link className="dropdown-item" to="/">Pick yo body part</Link>
+            <Link className="dropdown-item" to="/">Search Workouts</Link>
+            <Link className="dropdown-item" to="/">Create Workouts</Link>
+            <Link className="dropdown-item" to="/">Workout Plans</Link>
+            <div className="dropdown-divider"></div>
+            <Link className="dropdown-item" to="/meal-planner">Meal Planner</Link>
+            <Link className="dropdown-item" to="/calculator">Calorie Calculator</Link>
           </div>
         </li>
 
@@ -59,7 +59,7 @@ class Navbar extends Component {
     return (
       <nav className="navbar navbar-expand-sm navbar-dark bg-dark">
       <div className="container">
-      <Link class="navbar-brand" to="/"><img alt="logo" src={headerLogo} height="40px"></img></Link>
+      <Link className="navbar-brand" to="/"><img alt="logo" src={headerLogo} height="40px"></img></Link>
         <button
           className="navbar-toggler"
           type="button"
@@ -75,7 +75,7 @@ class Navbar extends Component {
         <div className="collapse navbar-collapse justify-content-end " id="navbarsExample10">
           <ul className="navbar-nav">
             <li className="nav-item">
-              <Link to="/" className="nav-link">
+              <Link to="/" className="nav-link" >
                 Home
               </Link>
             </li>
