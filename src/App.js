@@ -18,6 +18,7 @@ import Access from './components/FooterLinks/Accessibility'
 import Cookies from './components/FooterLinks/Cookies'
 import Privacy from './components/FooterLinks/Privacy'
 import TOS from './components/FooterLinks/TermsOfService'
+import ForgotPass from './components/ForgotPassword'
 
 class App extends Component {
   render() {
@@ -28,6 +29,7 @@ class App extends Component {
           <Switch>
             <Route exact path="/" component={Landing} />
             <Route exact path="/login" component={Login} />
+            <Route exact path = "/forgot-password" component={ForgotPass} />
             <Route exact path="/register" component={Register} />
             <Route exact path="/faq" component={FAQ} />
             <Route exact path = "/tos" component = {TOS} />

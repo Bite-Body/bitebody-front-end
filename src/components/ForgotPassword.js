@@ -1,14 +1,12 @@
 import React, { Component } from 'react'
 import LoadingOverlay from 'react-loading-overlay'
-import { login } from './UserFunctions'
 import {Link} from 'react-router-dom';
 
-class Login extends Component {
+class ForgotPassword extends Component {
   constructor() {
     super()
     this.state = {
       email: '',
-      password: '',
       errors: '',
       loading: false
     }
@@ -22,27 +20,15 @@ class Login extends Component {
     this.setState({ [e.target.name]: e.target.value })
   }
 
-  onSubmit(e) {
+  onSubmit(e) { //EDIT EVENT HANDLER TO activate email api 
     this.setState({loading: true })
 
     e.preventDefault()
 
     const user = {
-      email: this.state.email,
-      password: this.state.password
+      email: this.state.email
     }
 
-    login(user).then(res => {
-      console.log(res)
-      if (res.Allow === "yes") {
-        this.props.history.push('/')
-      }
-      else{
-        this.props.history.push('/login')
-        this.setState({errors: res.Error})
-        this.setState({loading: false })
-      }
-    })
   }
 
   render() {
@@ -52,7 +38,7 @@ class Login extends Component {
       <LoadingOverlay
       active={this.state.loading}
       spinner
-      text='Signing in...'
+      text='Sending email confirmation'
       >
       <div className="container">
           
@@ -75,30 +61,14 @@ class Login extends Component {
                   onChange={this.onChange}
                 />
               </div>
-              <div className="form-group">
-                <label htmlFor="password">Password</label>
-                <input
-                  type="password"
-                  className="form-control"
-                  name="password"
-                  placeholder="Password"
-                  value={this.state.password}
-                  onChange={this.onChange}
-                />
-              </div>
           
-                <Link to="/forgot-password" style = {{textalign:'center'}}>
-                I forgot my password :(
-                </Link>
-              <br/>
-              <br/>
 
 
               <button
                 type="submit"
                 className="btn btn-lg btn-primary btn-block"
               >
-                Sign in
+                Reset my password
               </button>
             </form>
           </div>
