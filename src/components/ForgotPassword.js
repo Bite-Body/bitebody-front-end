@@ -49,7 +49,7 @@ class ForgotPassword extends Component {
             <p style={{color: 'red'}}>{this.state.errors}</p>
 
             <form noValidate onSubmit={this.onSubmit}>
-              <h1 className="h3 mb-3 font-weight-normal">Please sign in</h1>
+              <h1 className="h3 mb-3 font-weight-normal">Enter Account's associated Email Address</h1>
               <div className="form-group">
                 <label htmlFor="email">Email address</label>
                 <input
@@ -85,4 +85,4 @@ class ForgotPassword extends Component {
   }
 }
 
-export default Login
+export default ForgotPassword
