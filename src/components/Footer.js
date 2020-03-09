@@ -102,10 +102,14 @@ const FooterPagePro = () => {
                 <a href="#!">NEW</a>
               </li>
               <li>
-                <a href="#!">Goals</a>
+              <Link to="/Goals">
+              Goals
+              </Link>
               </li>
               <li>
-                <a href="#!">Features</a>
+              <Link to="/Features">
+              Features
+              </Link>
               </li>
             </ul>
           </MDBCol>

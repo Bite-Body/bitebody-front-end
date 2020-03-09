@@ -17,6 +17,9 @@ import Calculator from './components/Calculator/Calculator'
 import Access from './components/FooterLinks/Accessibility'
 import Cookies from './components/FooterLinks/Cookies'
 import Privacy from './components/FooterLinks/Privacy'
+import Features from './components/FooterLinks/Features'
+import Goals from './components/FooterLinks/Goals'
+import BodyPicker from './components/BodyPicker/BodyPicker'
 
 class App extends Component {
   render() {
@@ -38,6 +41,9 @@ class App extends Component {
             <Route exact path="/Accessibility" component={Access} />
             <Route exact path="/Cookies" component={Cookies} />
             <Route exact path="/Privacy" component={Privacy} />
+            <Route exact path="/Features" component={Features} />
+            <Route exact path="/BodyPicker" component={BodyPicker} />
+            <Route exact path="/Goals" component={Goals} />
             <Route path="*" component={FourOhFour} />
             <Redirect from="*" to="/404" />
           </Switch>
