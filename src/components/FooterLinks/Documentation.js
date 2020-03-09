@@ -35,10 +35,14 @@ class Docu extends Component {
          {//<a href={dd} >IM A BOT</a> <br/>
           }
            <a href={brd} >Business Requirements Document</a>
+           <br/>
            <a href={des_doc} >Design Documentation</a>
-           <a href={proto} >Business Requirements Document</a>
-           <a href={testSpec} >Business Requirements Document</a>
-           <a href={userMan} >Business Requirements Document</a>
+           <br/>
+           <a href={proto} >Prototype Walkthrough</a>
+           <br/>
+           <a href={testSpec} >Testing Specification</a>
+           <br/>
+           <a href={userMan} >User Manual</a>
           
 
           
