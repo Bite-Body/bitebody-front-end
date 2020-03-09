@@ -17,6 +17,7 @@ import Calculator from './components/Calculator/Calculator'
 import Access from './components/FooterLinks/Accessibility'
 import Cookies from './components/FooterLinks/Cookies'
 import Privacy from './components/FooterLinks/Privacy'
+import TOS from './components/FooterLinks/TermsOfService'
 
 class App extends Component {
   render() {
@@ -29,6 +30,7 @@ class App extends Component {
             <Route exact path="/login" component={Login} />
             <Route exact path="/register" component={Register} />
             <Route exact path="/faq" component={FAQ} />
+            <Route exact path = "/tos" component = {TOS} />
             <Route exact path="/about" component={About} />
             <Route exact path="/documentation" component={Documentation} />
             <Route exact path="/team" component={Team} />
