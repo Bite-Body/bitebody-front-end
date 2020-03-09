@@ -17,9 +17,14 @@ import Calculator from './components/Calculator/Calculator'
 import Access from './components/FooterLinks/Accessibility'
 import Cookies from './components/FooterLinks/Cookies'
 import Privacy from './components/FooterLinks/Privacy'
+<<<<<<< HEAD
 import Features from './components/FooterLinks/Features'
 import Goals from './components/FooterLinks/Goals'
 import BodyPicker from './components/BodyPicker/BodyPicker'
+=======
+import TOS from './components/FooterLinks/TermsOfService'
+import ForgotPass from './components/ForgotPassword'
+>>>>>>> dd86be2cc2b8d42a8cf39c13e48d946567b828e5
 
 class App extends Component {
   render() {
@@ -30,8 +35,10 @@ class App extends Component {
           <Switch>
             <Route exact path="/" component={Landing} />
             <Route exact path="/login" component={Login} />
+            <Route exact path = "/forgot-password" component={ForgotPass} />
             <Route exact path="/register" component={Register} />
             <Route exact path="/faq" component={FAQ} />
+            <Route exact path = "/tos" component = {TOS} />
             <Route exact path="/about" component={About} />
             <Route exact path="/documentation" component={Documentation} />
             <Route exact path="/team" component={Team} />

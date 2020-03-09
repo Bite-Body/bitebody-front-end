@@ -96,7 +96,9 @@ const FooterPagePro = () => {
             </h5>
             <ul className="list-unstyled">
               <li>
-                <a href="#!">TOS</a>
+              <Link to="/tos">
+              Terms of Service
+              </Link>
               </li>
               <li>
                 <a href="#!">NEW</a>
