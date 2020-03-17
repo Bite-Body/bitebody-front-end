@@ -2,8 +2,6 @@ import React, { Component } from 'react'
 import axios from 'axios'
 import Results from './Results'
 
-axios.defaults.baseURL = 'https://cors-anywhere.herokuapp.com/https://2o8jsg6z03.execute-api.us-west-1.amazonaws.com/default/'
-
 class MealPlanner extends Component {
   constructor() {
     super()
@@ -44,7 +42,7 @@ class MealPlanner extends Component {
 
     e.preventDefault()
 
-    axios.post('mealplanner', payload)
+    axios.post('https://cors-anywhere.herokuapp.com/https://2o8jsg6z03.execute-api.us-west-1.amazonaws.com/default/mealplanner', payload)
     .then(response => {
       this.setState({ results: JSON.stringify(response.data)})
     })
