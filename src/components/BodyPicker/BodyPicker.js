@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import body from '../../static/images/Body.png'
+
 class BodyPicker extends Component {
   
   componentDidMount() {
@@ -7,24 +8,25 @@ class BodyPicker extends Component {
   }
   render() {
     return (
-        <div className="container">
-        <br/><br/>
-        <div class = "centering" data-analytics-section = "Center">
-          <div class = "block center">
-            <h1 class = "h1"><center>BodyPicker</center></h1>
-            <hr></hr>
-            <p>
-            <center>Our application's body picker features is currently being worked on. </center>
-            </p>
+        <html>
+        <body>
             
-          </div>
-        </div>
+                <h1><center>Pick Yo Body Part</center></h1>
+                
+                <center><img src = {body} alt = "body"  width = "800" height = "900" useMap = "#bodyimage"></img></center>
+                <map name = "bodyimage">
+                    <area shape = "rect" coords = "240, 200, 320, 450" alt = "Left Arm" href = "https://www.google.com"/> 
+                    <area shape = "rect" coords = "340, 220, 460, 280" alt = "Chest" href = "https://www.google.com"/>  
+                    <area shape = "rect" coords = "470, 200, 550, 450" alt = "Right Arm" href = "https://www.google.com"/>  
+                    <area shape = "rect" coords = "321, 460, 380, 800" alt = "Left Leg" href = "https://www.google.com"/>    
+                    <area shape = "rect" coords = "415, 460, 480, 800" alt = "Right Leg" href = "https://www.google.com"/>  
+                    <area shape = "rect" coords = "340, 285, 460, 400" alt = "Abdomen" href = "https://www.google.com"/>                                          
+                </map>
+                
+        </body>
+        </html>
         
         
-       
-
-        <br/><br/><br/>
-      </div>
     )
   }
 }
