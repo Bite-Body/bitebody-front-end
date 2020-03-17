@@ -65,7 +65,7 @@ class Login extends Component {
             <form noValidate onSubmit={this.onSubmit}>
               <h1 className="h3 mb-3 font-weight-normal">Please sign in</h1>
               <div className="form-group">
-                <label htmlFor="email">email </label>
+                <label htmlFor="email">Email address</label>
                 <input
                   type="email"
                   className="form-control"
@@ -88,7 +88,7 @@ class Login extends Component {
               </div>
           
                 <Link to="/forgot-password" style = {{textalign:'center'}}>
-                I forgot my password testing :(
+                I forgot my password :(
                 </Link>
               <br/>
               <br/>
