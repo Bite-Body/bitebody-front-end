@@ -7,7 +7,7 @@ class Login extends Component {
   constructor() {
     super()
     this.state = {
-      username: '',
+      email: '',
       password: '',
       errors: '',
       loading: false
@@ -28,7 +28,7 @@ class Login extends Component {
     e.preventDefault()
 
     const user = {
-      username: this.state.username,
+      email: this.state.email,
       password: this.state.password
     }
 
@@ -65,13 +65,13 @@ class Login extends Component {
             <form noValidate onSubmit={this.onSubmit}>
               <h1 className="h3 mb-3 font-weight-normal">Please sign in</h1>
               <div className="form-group">
-                <label htmlFor="username">username </label>
+                <label htmlFor="email">Email address</label>
                 <input
-                  type="username"
+                  type="email"
                   className="form-control"
-                  name="username"
-                  placeholder="Enter username"
-                  value={this.state.username}
+                  name="email"
+                  placeholder="Enter email"
+                  value={this.state.email}
                   onChange={this.onChange}
                 />
               </div>
