@@ -36,10 +36,11 @@ class Navbar extends Component {
             <Link className="dropdown-item" to="/BodyPicker">Pick yo body part</Link>
             <Link className="dropdown-item" to="/">Search Workouts</Link>
             <Link className="dropdown-item" to="/">Create Workouts</Link>
-            <Link className="dropdown-item" to="/">Workout Plans</Link>
+            <Link className="dropdown-item" to="/WorkoutPlans">Workout Plans</Link>
             <div className="dropdown-divider"></div>
             <Link className="dropdown-item" to="/meal-planner">Meal Planner</Link>
             <Link className="dropdown-item" to="/calculator">Calorie Calculator</Link>
+            <Link className="dropdown-item" to="/mealselection">Meal Selection</Link>
           </div>
         </li>
 

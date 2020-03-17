@@ -22,6 +22,8 @@ import Goals from './components/FooterLinks/Goals'
 import BodyPicker from './components/BodyPicker/BodyPicker'
 import TOS from './components/FooterLinks/TermsOfService'
 import ForgotPass from './components/ForgotPassword'
+import WorkoutPlans from './components/WorkoutPlans/WorkoutPlans'
+import MealSelection from './components/MealSelection/MealSelection'
 
 class App extends Component {
   render() {
@@ -48,6 +50,8 @@ class App extends Component {
             <Route exact path="/Features" component={Features} />
             <Route exact path="/BodyPicker" component={BodyPicker} />
             <Route exact path="/Goals" component={Goals} />
+            <Route exact path="/WorkoutPlans" component={WorkoutPlans} />
+            <Route exact path="/mealselection" component={MealSelection} />
             <Route path="*" component={FourOhFour} />
             <Redirect from="*" to="/404" />
           </Switch>
