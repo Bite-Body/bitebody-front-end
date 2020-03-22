@@ -27,7 +27,7 @@ class ForgotPassword extends Component {
     e.preventDefault()
 
     const cluelessUser = {
-      email: this.state.emails
+      email: this.state.email
     }
 
     forgotPass(cluelessUser).then(res => {
