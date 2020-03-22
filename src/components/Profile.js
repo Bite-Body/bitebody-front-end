@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import jwt_decode from 'jwt-decode'
 import '../static/css/Profile.css'
 import david from '../static/images/rsz_Dave.jpg'
 
@@ -7,14 +8,29 @@ class Profile extends Component {
   constructor() {
     super()
     this.state = {
-      first_name: '',
-      last_name: '',
-      email: '',
-      errors: {}
+        first_name: '',
+        last_name: '',
+        email: '',
+        id: '',
+        errors: {}
     }
   }
  
+  componentDidMount() {
+    const token = localStorage.usertoken
+    try{
+      const decoded = jwt_decode(token)
+      this.setState({
+        first_name: decoded.identity.first_name,
+        last_name: decoded.identity.last_name,
+        email: decoded.identity.email,
+        id: decoded.identity.id
+      })
+    }
+    catch(error){}
 
+    document.title = "Bitebody - Profile"
+  }
  
 
   render() {
@@ -35,7 +51,7 @@ class Profile extends Component {
                     <div class="col-md-6">
                         <div class="profile-head">
                                     <h5>
-                                        David Ibarra
+                                        {this.state.first_name} {this.state.last_name}
                                     </h5>
                                     <h6>
                                         Collaborator
@@ -78,7 +94,7 @@ class Profile extends Component {
                                                 <label id = "user">User Id</label>
                                             </div>
                                             <div class="col-md-6">
-                                                <p>Dave123</p>
+                                                <p>{this.state.id}</p>
                                             </div>
                                         </div>
                                         <div class="row">
@@ -86,7 +102,7 @@ class Profile extends Component {
                                                 <label>Name</label>
                                             </div>
                                             <div class="col-md-6">
-                                                <p>David Ibarra</p>
+                                                <p>{this.state.first_name} {this.state.last_name}</p>
                                             </div>
                                         </div>
                                         <div class="row">
@@ -94,7 +110,7 @@ class Profile extends Component {
                                                 <label>Email</label>
                                             </div>
                                             <div class="col-md-6">
-                                                <p>David@gmail.com</p>
+                                                <p>{this.state.email}</p>
                                             </div>
                                         </div>
                                         <div class="row">

@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import LoadingOverlay from 'react-loading-overlay'
 import { register } from './UserFunctions'
+import FourOhFour from './404'
 
 class Register extends Component {
   constructor() {
@@ -86,7 +87,8 @@ class Register extends Component {
   }
 
   render() {
-    return (
+    if(!(localStorage.usertoken)){
+      return (
       <>
       <LoadingOverlay
       active={this.state.loading}
@@ -161,7 +163,15 @@ class Register extends Component {
       </div>
       </LoadingOverlay>
       </>
-    )
+      )
+    }
+    else{
+      return(
+        <>
+          <FourOhFour/>
+        </>
+      )
+    }
   }
 }
 

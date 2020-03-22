@@ -25,13 +25,17 @@ export const login = user => {
       password: user.password
     })
     .then(response => {
-      if(response.data["Allow"] === "yes"){
+      try{
+        if(response.data["Allow"] === "no"){
+          return response.data
+        }
         localStorage.setItem('usertoken', response.data)
-        console.log(response.data)
+
         return response.data
       }
-      console.log(response.data)
-      return response.data
+      catch(error){
+        console.log(error)
+      }
     })
     .catch(err => {
       console.log(err)

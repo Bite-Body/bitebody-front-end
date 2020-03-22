@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import LoadingOverlay from 'react-loading-overlay'
 import { login } from './UserFunctions'
-import {Link} from 'react-router-dom';
+import {Link} from 'react-router-dom'
+import FourOhFour from './404'
 
 class Login extends Component {
   constructor() {
@@ -33,8 +34,7 @@ class Login extends Component {
     }
 
     login(user).then(res => {
-      console.log(res)
-      if (res.Allow === "yes") {
+      if (res.Allow !== "no") {
         this.props.history.push('/')
       }
       else{
@@ -47,7 +47,8 @@ class Login extends Component {
 
   render() {
 
-    return (
+    if(!(localStorage.usertoken)){
+      return (
       <>
       <LoadingOverlay
       active={this.state.loading}
@@ -63,7 +64,7 @@ class Login extends Component {
             <p style={{color: 'red'}}>{this.state.errors}</p>
 
             <form noValidate onSubmit={this.onSubmit}>
-              <h1 className="h3 mb-3 font-weight-normal">Please sign in</h1>
+              <h1 className="h3 mb-3 font-weight-normal">Sign In</h1>
               <div className="form-group">
                 <label htmlFor="email">Email address</label>
                 <input
@@ -111,7 +112,15 @@ class Login extends Component {
       </div>
       </LoadingOverlay>
       </>
-    )
+      )
+    }
+    else{
+      return(
+        <>
+          <FourOhFour/>
+        </>
+      )
+    }
   }
 }
 

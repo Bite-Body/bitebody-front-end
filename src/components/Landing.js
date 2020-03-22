@@ -1,15 +1,36 @@
 import React, { Component } from 'react'
+import jwt_decode from 'jwt-decode'
 import '../static/css/Landing.css'
-import screenshot from '../static/images/iphone_scr.png' 
+import screenshot from '../static/images/iphone_scr.png'
 
 var welcome = {
   fontSize: 50
 };
 
 class Landing extends Component {
+  constructor() {
+    super()
+    this.state = {
+      first_name: '',
+      last_name: '',
+      email: '',
+      id: ''
+    }
+  }
 
   componentDidMount() {
     document.title = "Bitebody - Home"
+    const token = localStorage.usertoken
+    try{
+      const decoded = jwt_decode(token)
+      this.setState({
+        first_name: decoded.identity.first_name,
+        last_name: decoded.identity.last_name,
+        email: decoded.identity.email,
+        id: decoded.identity.id
+      })
+    }
+    catch(error){}
   }
 
   render() {
@@ -19,7 +40,7 @@ class Landing extends Component {
 
           <div className="row">
             <div className="col-sm-12 mx-auto">
-              <h1 className="text-center" style={welcome}>Welcome to BiteBody.xyz!</h1>
+              <h1 className="text-center" style={welcome}>Welcome {this.state.first_name} to BiteBody.xyz!</h1>
               <hr/>
               <p><center>Our web application is intended to make exercising easy to do and highly accessible!</center></p>
               <br/>
