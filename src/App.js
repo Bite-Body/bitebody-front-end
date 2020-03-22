@@ -23,6 +23,7 @@ import BodyPicker from './components/BodyPicker/BodyPicker'
 import TOS from './components/FooterLinks/TermsOfService'
 import ForgotPass from './components/ForgotPassword'
 import ResetPass from './components/ResetPassword'
+import EmailSent from './components/emailSent'
 import WorkoutPlans from './components/WorkoutPlans/WorkoutPlans'
 import MealSelection from './components/MealSelection/MealSelection'
 
@@ -37,6 +38,7 @@ class App extends Component {
             <Route exact path="/login" component={Login} />
             <Route exact path = "/forgot-password" component={ForgotPass} />
             <Route exact path = "/reset-password" component={ResetPass}/>
+            <Route exact path = "/email-sent" component = {EmailSent}/>
             <Route exact path="/register" component={Register} />
             <Route exact path="/faq" component={FAQ} />
             <Route exact path = "/tos" component = {TOS} />

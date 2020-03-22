@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import LoadingOverlay from 'react-loading-overlay'
+import {forgotPass} from './UserFunctions'
 import {Link} from 'react-router-dom';
 
 class ForgotPassword extends Component {
@@ -25,9 +26,27 @@ class ForgotPassword extends Component {
 
     e.preventDefault()
 
-    const user = {
-      email: this.state.email
+    const cluelessUser = {
+      email: this.state.emails
     }
+
+    forgotPass(cluelessUser).then(res => {
+      console.log(res)
+      if (res.Allow === "yes") {
+        this.props.history.push('/reset-password')
+      }
+      else if(res.Error === "Unable to perform operation.")
+      {
+        this.props.history.push('/email-sent')
+        this.setState({errors: res.Error})
+        this.setState({loading: false })
+      }
+      else{
+        this.props.history.push('/')
+        this.setState({errors: res.Error})
+        this.setState({loading: false })
+      }
+    })
 
   }
 
