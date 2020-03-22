@@ -38,5 +38,17 @@ export const login = user => {
     })
 }
 
+export const forgotPass = cluelessUser => {
+  return axios
+  .post('users/forgot-password', {
+    email: cluelessUser.email
+  })
+  .then(response => {
+    return response.data
+  })
+  .catch(err => {
+    console.log(err)
+  })
+}
 
 
