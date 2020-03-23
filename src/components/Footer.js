@@ -72,17 +72,17 @@ const FooterPagePro = () => {
             </h5>
             <ul className="list-unstyled">
               <li>
-              <Link to="/Accessibility">
+              <Link to="/accessibility">
               Accessibility
               </Link>
               </li>
               <li>
-              <Link to="/Cookies">
+              <Link to="/cookies">
               Cookies
               </Link>
               </li>
               <li>
-              <Link to="/Privacy">
+              <Link to="/privacy">
               Privacy
               </Link>
               </li>
@@ -104,12 +104,12 @@ const FooterPagePro = () => {
                 <a href="#!">NEW</a>
               </li>
               <li>
-              <Link to="/Goals">
+              <Link to="/goals">
               Goals
               </Link>
               </li>
               <li>
-              <Link to="/Features">
+              <Link to="/features">
               Features
               </Link>
               </li>
@@ -127,17 +127,17 @@ const FooterPagePro = () => {
       <div className="text-center">
         <ul className="list-unstyled list-inline">
           <li className="list-inline-item">
-            <a href="https://www.facebook.com/bitten.boody.5" className="btn-floating btn-sm btn-fb mx-1" target = "_blank">
+            <a href="https://www.facebook.com/bitten.boody.5" className="btn-floating btn-sm btn-fb mx-1" rel="noopener noreferrer">
               <i className="fab fa-facebook-f"> </i>
             </a>
           </li>
           <li className="list-inline-item">
-            <a href="https://twitter.com/BodyBite" className="btn-floating btn-sm btn-tw mx-1" target = "_blank">
+            <a href="https://twitter.com/BodyBite" className="btn-floating btn-sm btn-tw mx-1" rel="noopener noreferrer">
               <i className="fab fa-twitter"> </i>
             </a>
           </li>
           <li className="list-inline-item">
-            <a href="https://www.instagram.com/bitebodyxyz/" className="btn-floating btn-sm btn-gplus mx-1" target = "_blank">
+            <a href="https://www.instagram.com/bitebodyxyz/" className="btn-floating btn-sm btn-gplus mx-1" rel="noopener noreferrer">
               <i className="fab fa-instagram"> </i>
             </a>
           </li>

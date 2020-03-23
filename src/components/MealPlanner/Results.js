@@ -1,8 +1,10 @@
-import React from 'react';
+import React from 'react'
+import {Link} from 'react-router-dom'
 import '../../static/css/Meal-Planner-Result.css'
+
 const Card = props =>{
     let json_result = JSON.parse(props.results)
-    console.log(json_result)
+
     return(
         <div className="row">
         <div className="col-md-1">
@@ -25,11 +27,11 @@ const Card = props =>{
                     <strong>Breakfast:</strong> <br/>
                         <div className="row">
                             <div className="col-md-2">
-                                <a href={json_result.breakfast.url} target="_blank"><img className="borderImage" src={json_result.breakfast.image}></img></a>
+                                <Link to={json_result.breakfast.url} rel="noopener noreferrer"><img className="borderImage" src={json_result.breakfast.image} alt="breakfast"></img></Link>
                             </div>
 
                             <div className="col-md-8 mealPadding">
-                                <strong>Item:</strong> <a href={json_result.breakfast.url} target="_blank">{json_result.breakfast.title}</a><br/>
+                                <strong>Item:</strong> <a href={json_result.breakfast.url} rel="noopener noreferrer">{json_result.breakfast.title}</a><br/>
                                 <strong>Calories:</strong> {json_result.breakfast.calories}<br/>
                                 <strong>Fat:</strong> {json_result.breakfast.fat}g<br/>
                                 <strong>Carbs:</strong> {json_result.breakfast.carbs}g<br/>
@@ -41,11 +43,11 @@ const Card = props =>{
                     <strong>Lunch:</strong> <br/>
                         <div className="row">
                             <div className="col-md-2">
-                                <a href={json_result.lunch.url} target="_blank"><img className="borderImage" src={json_result.lunch.image}></img></a>
+                                <Link to={json_result.lunch.url} rel="noopener noreferrer"><img className="borderImage" src={json_result.lunch.image} alt="lunch"></img></Link>
                             </div>
 
                             <div className="col-md-10 mealPadding">
-                            <strong>Item:</strong> <a href={json_result.lunch.url} target="_blank">{json_result.lunch.title}</a><br/>
+                            <strong>Item:</strong> <a href={json_result.lunch.url} rel="noopener noreferrer">{json_result.lunch.title}</a><br/>
                                 <strong>Calories:</strong> {json_result.lunch.calories}<br/>
                                 <strong>Fat:</strong> {json_result.lunch.fat}g<br/>
                                 <strong>Carbs:</strong> {json_result.lunch.carbs}g<br/>
@@ -57,11 +59,11 @@ const Card = props =>{
                     <strong>Dinner:</strong> <br/>
                         <div className="row">
                             <div className="col-md-2">
-                                <a href={json_result.dinner.url} target="_blank"><img className="borderImage" src={json_result.dinner.image}></img></a>
+                                <Link to={json_result.dinner.url} rel="noopener noreferrer"><img className="borderImage" src={json_result.dinner.image} alt="dinner"></img></Link>
                             </div>
 
                             <div className="col-md-10 mealPadding">
-                            <strong>Item:</strong> <a href={json_result.dinner.url} target="_blank">{json_result.dinner.title}</a><br/>
+                            <strong>Item:</strong> <a href={json_result.dinner.url} rel="noopener noreferrer">{json_result.dinner.title}</a><br/>
                                 <strong>Calories:</strong> {json_result.dinner.calories}<br/>
                                 <strong>Fat:</strong> {json_result.dinner.fat}g<br/>
                                 <strong>Carbs:</strong> {json_result.dinner.carbs}g<br/>
@@ -73,11 +75,11 @@ const Card = props =>{
                     <strong>Snack:</strong> <br/>
                         <div className="row">
                             <div className="col-md-2">
-                                <a href={json_result.snack.url} target="_blank"><img className="borderImage" src={json_result.snack.image}></img></a>
+                                <Link to={json_result.snack.url} rel="noopener noreferrer"><img className="borderImage" src={json_result.snack.image} alt="snack"></img></Link>
                             </div>
 
                             <div className="col-md-10 mealPadding">
-                            <strong>Item:</strong> <a href={json_result.snack.url} target="_blank">{json_result.snack.title}</a><br/>
+                            <strong>Item:</strong> <a href={json_result.snack.url} rel="noopener noreferrer">{json_result.snack.title}</a><br/>
                                 <strong>Calories:</strong> {json_result.snack.calories}<br/>
                                 <strong>Fat:</strong> {json_result.snack.fat}g<br/>
                                 <strong>Carbs:</strong> {json_result.snack.carbs}g<br/>

@@ -23,7 +23,7 @@ import BodyPicker from './components/BodyPicker/BodyPicker'
 import TOS from './components/FooterLinks/TermsOfService'
 import ForgotPass from './components/ForgotPassword'
 import ResetPass from './components/ResetPassword'
-import EmailSent from './components/emailSent'
+import EmailSent from './components/EmailSent'
 import WorkoutPlans from './components/WorkoutPlans/WorkoutPlans'
 import MealSelection from './components/MealSelection/MealSelection'
 
@@ -48,14 +48,14 @@ class App extends Component {
             <Route exact path="/meal-planner" component={MealPlanner} />
             <Route exact path="/calculator" component={Calculator} />
             <Route exact path="/profile" component={Profile} />
-            <Route exact path="/Accessibility" component={Access} />
-            <Route exact path="/Cookies" component={Cookies} />
-            <Route exact path="/Privacy" component={Privacy} />
-            <Route exact path="/Features" component={Features} />
-            <Route exact path="/BodyPicker" component={BodyPicker} />
-            <Route exact path="/Goals" component={Goals} />
-            <Route exact path="/WorkoutPlans" component={WorkoutPlans} />
-            <Route exact path="/mealselection" component={MealSelection} />
+            <Route exact path="/accessibility" component={Access} />
+            <Route exact path="/cookies" component={Cookies} />
+            <Route exact path="/privacy" component={Privacy} />
+            <Route exact path="/features" component={Features} />
+            <Route exact path="/body-picker" component={BodyPicker} />
+            <Route exact path="/goals" component={Goals} />
+            <Route exact path="/workout-plans" component={WorkoutPlans} />
+            <Route exact path="/meal-selection" component={MealSelection} />
             <Route path="*" component={FourOhFour} />
             <Redirect from="*" to="/404" />
           </Switch>

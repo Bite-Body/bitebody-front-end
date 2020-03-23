@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import axios from 'axios'
+import LoadingOverlay from 'react-loading-overlay'
 import Results from './Results'
 
 class MealPlanner extends Component {
@@ -9,7 +10,8 @@ class MealPlanner extends Component {
       diet_type: 'Any',
       calories: '',
       errors: '',
-      results: ''
+      results: '',
+      loading: false
     }
 
     this.onChange = this.onChange.bind(this)
@@ -18,37 +20,48 @@ class MealPlanner extends Component {
 
   onChange(e) {
     this.setState({ [e.target.name]: e.target.value })
-    console.log(this.state)
   }
-
+  
   onSubmit(e) {
+    this.setState({loading: true})
+
+    e.preventDefault()
+
     if(this.state.error !== ''){
       this.setState({ errors: '' })
     }
 
     let current_calories = parseInt(this.state.calories)
+    let valid_data = true
 
     if(this.state.calories === ''){
       this.setState({ errors: 'Empty fields.' })
+      valid_data = false
     }
     else if(current_calories < 800 | current_calories > 5200){
       this.setState({ errors: 'Invalid amount of calories, please choose a value between 800 to 5200 calories.' })
+      valid_data = false
     }
 
-    let payload = {}
-    payload['request'] = {}
-    payload['request']['diet-type'] = this.state.diet_type
-    payload['request']['calories'] = this.state.calories
+    if(valid_data){
+      let payload = {}
+      payload['request'] = {}
+      payload['request']['diet-type'] = this.state.diet_type
+      payload['request']['calories'] = this.state.calories
 
-    e.preventDefault()
+      e.preventDefault()
 
-    axios.post('https://cors-anywhere.herokuapp.com/https://2o8jsg6z03.execute-api.us-west-1.amazonaws.com/default/mealplanner', payload)
-    .then(response => {
-      this.setState({ results: JSON.stringify(response.data)})
-    })
-    .catch(err => {
-      console.log(err)
-    })
+      axios.post('https://cors-anywhere.herokuapp.com/https://2o8jsg6z03.execute-api.us-west-1.amazonaws.com/default/mealplanner', payload)
+      .then(response => {
+        this.setState({ results: JSON.stringify(response.data)})
+      })
+      .catch(err => {
+        console.log(err)
+
+      })
+    }
+
+    this.setState({loading: false})
   }
 
   render() {
@@ -78,6 +91,13 @@ class MealPlanner extends Component {
     )
 
     return (
+      <>
+      <LoadingOverlay
+      active={this.state.loading}
+      spinner
+      text='Generating meal plan...'
+      >
+      
       <div id="landing">
         <div className="container">
 
@@ -101,7 +121,7 @@ class MealPlanner extends Component {
 
                       <div className="row">
                         <div className="col-md-2" style={{marginTop: '0.5em', marginRight: '1em', marginLeft: '1em'}}>
-                          <label for="exampleFormControlSelect1">Diet Type</label>
+                          <label htmlFor="exampleFormControlSelect1">Diet Type</label>
                         </div>
                         <div className="col-md-8" style={{marginRight: '1em', marginLeft: '1em'}}>
                           <select className="form-control" id="exampleFormControlSelect1" name="diet_type" value={this.state.diet_type} onChange={this.onChange}>
@@ -118,10 +138,10 @@ class MealPlanner extends Component {
 
                       <div className="row">
                         <div className="col-md-2" style={{marginTop: '0.5em', marginRight: '1em', marginLeft: '1em'}}>
-                          <label for="exampleFormControlSelect1">Calories</label>
+                          <label htmlFor="exampleFormControlSelect1">Calories</label>
                         </div>
                         <div className="col-md-8" style={{marginRight: '1em', marginLeft: '1em'}}>
-                          <input type="text" name="calories" value={this.state.calories} onChange={this.onChange} class="form-control" id="formGroupExampleInput" placeholder="Amount of calories desired. (800-5200)"/>
+                          <input type="text" name="calories" value={this.state.calories} onChange={this.onChange} className="form-control" id="formGroupExampleInput" placeholder="Amount of calories desired. (800-5200)"/>
                         </div>
                       </div>
 
@@ -152,6 +172,8 @@ class MealPlanner extends Component {
 
         </div>
       </div>
+      </LoadingOverlay>
+      </>
     )
   }
 }
