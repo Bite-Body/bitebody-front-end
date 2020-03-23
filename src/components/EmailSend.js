@@ -1,8 +1,6 @@
 import React, { Component } from 'react'
 import LoadingOverlay from 'react-loading-overlay'
 
-import {Link} from 'react-router-dom';
-
 class ForgotPassword extends Component {
   constructor() {
     super()
