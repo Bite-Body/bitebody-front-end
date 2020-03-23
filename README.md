@@ -11,7 +11,7 @@ Created by **Bryan Rojas**, **Hector Mendoza**, **David Ibarra**, **Malik Colema
 
 ## Downloading Application
 
-1. Ensure git is installed on computer. You can verify by running the following command on your terminal.
+1. Ensure git is installed on computer. You can verify by running the following command on your terminal. 
 ```
 git --version
 ```
