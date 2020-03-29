@@ -55,4 +55,16 @@ export const forgotPass = cluelessUser => {
   })
 }
 
+export const calorieCalc = payload => {
+  console.log(payload)
+  return axios
+    .post('calories', payload)
+    .then(response => {
+      return response.data
+    })
+    .catch(err => {
+      console.log(err)
+      return err
+    })
+}
 
