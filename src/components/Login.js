@@ -89,7 +89,7 @@ class Login extends Component {
               </div>
           
                 <Link to="/forgot-password" style = {{textalign:'center'}}>
-                I forgot my password :(
+                I forgot my password!!! :(
                 </Link>
               <br/>
               <br/>
