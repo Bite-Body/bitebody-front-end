@@ -1,5 +1,5 @@
 import axios from 'axios'
-
+//THIS IS WHERE THE LINKAGE HAPPENS, YO!
 axios.defaults.baseURL = 'https://gentle-inlet-25364.herokuapp.com'
 
 export const register = newUser => {
