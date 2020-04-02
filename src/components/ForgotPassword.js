@@ -37,7 +37,7 @@ class ForgotPassword extends Component {
       }
       else if(res.Error === "Unable to perform operation.")
       {
-        this.props.history.push('/email-sent')
+        this.props.history.push('/email-not-sent')
         this.setState({errors: res.Error})
         this.setState({loading: false })
       }
