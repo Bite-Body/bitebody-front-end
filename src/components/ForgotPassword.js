@@ -33,7 +33,7 @@ class ForgotPassword extends Component {
     forgotPass(cluelessUser).then(res => {
       console.log(res)
       if (res.Allow === "yes") {
-        this.props.history.push('/reset-password')
+        this.props.history.push('/email-sent')
       }
       else if(res.Error === "Unable to perform operation.")
       {
