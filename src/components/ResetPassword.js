@@ -50,7 +50,7 @@ class ForgotPassword extends Component {
       }
       else
       {
-        this.props.history.push('/')
+        this.props.history.push('reset-password')
         this.setState({errors: res.Error})
         this.setState({loading: false })
       }
