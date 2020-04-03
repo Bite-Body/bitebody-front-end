@@ -44,13 +44,13 @@ class ForgotPassword extends Component {
       }
       else if(res.Allow === "No")
       {
-        this.props.history.push('reset-password')
+        this.props.history.push('/reset-password')
         this.setState({errors: res.Error})
         this.setState({loading: false })
       }
       else
       {
-        this.props.history.push('reset-password')
+        this.props.history.push('/reset-password')
         this.setState({errors: res.Error})
         this.setState({loading: false })
       }
