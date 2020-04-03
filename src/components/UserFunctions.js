@@ -60,7 +60,8 @@ export const resetPass = resetUser => {
   .post('users/reset-password', {
     email: resetUser.email,
     password: resetUser.password,
-    confirmed_password: resetUser.confirmed_password
+    confirmed_password: resetUser.confirmed_password,
+    reset_key: resetUser.reset_key
   })
   .then(response => {
     return response.data

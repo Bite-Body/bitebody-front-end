@@ -32,7 +32,8 @@ class ForgotPassword extends Component {
     const resetUser = {
       email: this.state.email,
       password: this.state.password,
-      confirmed_password: this.state.confirmed_password
+      confirmed_password: this.state.confirmed_password,
+      reset_key: this.state.reset_key
     }
 
     resetPass(resetUser).then(res => {
@@ -84,6 +85,17 @@ class ForgotPassword extends Component {
                   name="email"
                   placeholder="Enter email"
                   value={this.state.email}
+                  onChange={this.onChange}
+                />
+              </div>
+              <div className="form-group">
+                <label htmlFor="reset_key">reset key</label>
+                <input
+                  type="reset_key"
+                  className="form-control"
+                  name="reset_key"
+                  placeholder="Enter reset key"
+                  value={this.state.reset_key}
                   onChange={this.onChange}
                 />
               </div>
