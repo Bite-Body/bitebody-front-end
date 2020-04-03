@@ -4,7 +4,7 @@ import LoadingOverlay from 'react-loading-overlay'
 import {Link} from 'react-router-dom';
 import { resetPass } from './UserFunctions';
 
-class ForgotPassword extends Component {
+class ResetPassword extends Component {
   constructor() {
     super()
     this.state = {
@@ -41,7 +41,6 @@ class ForgotPassword extends Component {
       if(res.Allow ==="yes")
       {
         this.props.history.push('/pass-reset-success')
-        this.setState({loading: false })
       }
       else if(res.Allow === "No")
       {
@@ -146,4 +145,4 @@ class ForgotPassword extends Component {
   }
 }
 
-export default ForgotPassword
+export default ResetPassword
