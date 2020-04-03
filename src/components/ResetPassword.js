@@ -41,7 +41,7 @@ class ForgotPassword extends Component {
       {
         this.props.history.push('/login')
       }
-      else if(res.Error === "Passwords do not match!")
+      else if(res.Allow === "No")
       {
         this.props.history.push('reset-password')
         this.setState({errors: res.Error})
