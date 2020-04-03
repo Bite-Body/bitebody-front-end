@@ -55,6 +55,21 @@ export const forgotPass = cluelessUser => {
   })
 }
 
+export const resetPass = resetUser => {
+  return axios
+  .post('users/reset-password', {
+    email: resetUser.email,
+    password: resetUser.email,
+    confirmed_password: resetUser.confirmed_password
+  })
+  .then(response => {
+    return response.data
+  })
+  .catch(err => {
+    console.log(err)
+  })
+}
+
 export const calorieCalc = payload => {
   console.log(payload)
   return axios

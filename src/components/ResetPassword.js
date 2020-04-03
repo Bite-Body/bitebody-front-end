@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import LoadingOverlay from 'react-loading-overlay'
 
 import {Link} from 'react-router-dom';
+import { resetPass } from './UserFunctions';
 
 class ForgotPassword extends Component {
   constructor() {
@@ -27,6 +28,32 @@ class ForgotPassword extends Component {
     this.setState({loading: true })
 
     e.preventDefault()
+
+    const resetUser = {
+      email: this.state.email,
+      password: this.state.password,
+      confirmed_password: this.state.confirmed_password
+    }
+
+    resetPass(resetUser).then(res => {
+      console.log(res)
+      if(res.Allow ==="yes")
+      {
+        this.props.history.push('/login')
+      }
+      else if(res.Error === "Passwords do not match!")
+      {
+        this.props.history.push('reset-password')
+        this.setState({errors: res.Error})
+        this.setState({loading: false })
+      }
+      else
+      {
+        this.props.history.push('/')
+        this.setState({errors: res.Error})
+        this.setState({loading: false })
+      }
+    })
 
   }
 
