@@ -40,7 +40,8 @@ class ForgotPassword extends Component {
       console.log(res)
       if(res.Allow ==="yes")
       {
-        this.props.history.push('/pass-reset-success')
+        this.props.history.push('/pass-reset-success')\
+        this.setState({loading: false })
       }
       else if(res.Allow === "No")
       {
