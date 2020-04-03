@@ -59,7 +59,7 @@ export const resetPass = resetUser => {
   return axios
   .post('users/reset-password', {
     email: resetUser.email,
-    password: resetUser.email,
+    password: resetUser.password,
     confirmed_password: resetUser.confirmed_password
   })
   .then(response => {
