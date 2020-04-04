@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
 import LoadingOverlay from 'react-loading-overlay'
 
-import {Link} from 'react-router-dom';
-import { resetPass } from './UserFunctions';
-
+import {Link} from 'react-router-dom'
+import { resetPass } from './UserFunctions'
+import FourOhFour from './404'
 class ResetPassword extends Component {
   constructor() {
     super()
