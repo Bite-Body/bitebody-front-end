@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import LoadingOverlay from 'react-loading-overlay'
+import FourOhFour from './404'
 
 class ForgotPassword extends Component {
   constructor() {
@@ -15,38 +16,47 @@ class ForgotPassword extends Component {
 
 
   render() {
-
-    return (
-      <>
-      <LoadingOverlay
-      active={this.state.loading}
-      spinner
-      text='Resetting Password'
-      >
-      <div className="container">
+    if(!(localStorage.usertoken)){
+      return (
+        <>
+        <LoadingOverlay
+        active={this.state.loading}
+        spinner
+        text='Resetting Password'
+        >
+        <div className="container">
+            
           
-        
-        <div className="row">
-          <div className="col-md-6 mt-5 mx-auto">
+          <div className="row">
+            <div className="col-md-6 mt-5 mx-auto">
 
-            <p style={{color: 'red'}}>{this.state.errors}</p>
+              <p style={{color: 'red'}}>{this.state.errors}</p>
 
-            <form noValidate onSubmit={this.onSubmit}>
-              <h1 className="h3 mb-3 font-weight-normal">Email Successfully Sent! Please check email address and follow enclosed instructions for password reset instructions! </h1>
-              
-          
-            </form>
+              <form noValidate onSubmit={this.onSubmit}>
+                <h1 className="h3 mb-3 font-weight-normal">Email Successfully Sent! Please check email address and follow enclosed instructions for password reset instructions! </h1>
+                
+            
+              </form>
+            </div>
           </div>
-        </div>
-        <br/>
-        <br/>
-        <br/>
+          <br/>
+          <br/>
+          <br/>
 
-        
-      </div>
-      </LoadingOverlay>
-      </>
-    )
+          
+        </div>
+        </LoadingOverlay>
+        </>
+      )
+    }
+    else
+    {
+      return(
+        <>
+          <FourOhFour/>
+        </>
+      )
+    }
   }
 }
 
