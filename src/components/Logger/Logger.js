@@ -6,7 +6,7 @@ export const post_log = async (action) => {
     let formatted_date = date.toISOString().split('T')[0] + ' ' + date.toISOString().split('T')[1].split('Z')[0]
     let source = "Bitebody.xyz FRONT-END"
 
-    const response = await fetch('http://geoip-db.com/json/');
+    const response = await fetch('https://geoip-db.com/json/');
     const client_data = await response.json()
 
     let log = {
