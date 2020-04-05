@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import LoadingOverlay from 'react-loading-overlay'
 import {forgotPass} from './UserFunctions'
-import {Link} from 'react-router-dom'
 import FourOhFour from './404'
 
 class ForgotPassword extends Component {

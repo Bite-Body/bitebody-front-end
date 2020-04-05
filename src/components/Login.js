@@ -3,6 +3,7 @@ import LoadingOverlay from 'react-loading-overlay'
 import { login } from './UserFunctions'
 import {Link} from 'react-router-dom'
 import FourOhFour from './404'
+import { post_log } from './Logger/Logger'
 
 class Login extends Component {
   constructor() {
@@ -25,6 +26,10 @@ class Login extends Component {
 
   onSubmit(e) {
     this.setState({loading: true })
+
+    let action = 'SUBMIT /login for ' + this.state.email
+    if(this.state.email === ""){action = 'SUBMIT /login for NULL USER'}
+    post_log(action)
 
     e.preventDefault()
 
