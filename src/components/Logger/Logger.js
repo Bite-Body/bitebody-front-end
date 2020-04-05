@@ -32,8 +32,4 @@ export const post_log = async (action) => {
             console.log(err)
         })
 
-
-    console.log(url)
-    console.log(formatted_date)
-    console.log(action)
 }
