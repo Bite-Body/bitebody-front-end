@@ -28,6 +28,8 @@ import EmailSent from './components/EmailSentSuccessfully'
 import PassResetComplete from './components/PasswordSuccessfullyReset'
 import WorkoutPlans from './components/WorkoutPlans/WorkoutPlans'
 import MealSelection from './components/MealSelection/MealSelection'
+import SearchWorkout from './components/SearchWorkouts/SearchWorkout'
+import CreateWorkout from './components/CreateWorkout/CreateWorkout'
 
 
 class App extends Component {
@@ -61,6 +63,8 @@ class App extends Component {
             <Route exact path="/goals" component={Goals} />
             <Route exact path="/workout-plans" component={WorkoutPlans} />
             <Route exact path="/meal-selection" component={MealSelection} />
+            <Route exact path="/searchWorkouts" component={SearchWorkout} />
+            <Route exact path="/createWorkouts" component={CreateWorkout} />
             <Route path="*" component={FourOhFour} />
             <Redirect from="*" to="/404" />
           </Switch>
