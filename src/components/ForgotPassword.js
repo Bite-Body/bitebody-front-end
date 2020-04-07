@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import LoadingOverlay from 'react-loading-overlay'
 import {forgotPass} from './UserFunctions'
 import FourOhFour from './404'
+import { post_log } from './Logger/Logger'
 
 class ForgotPassword extends Component {
   constructor() {
@@ -23,6 +24,10 @@ class ForgotPassword extends Component {
 
   onSubmit(e) { //EDIT EVENT HANDLER TO activate email api 
     this.setState({loading: true })
+
+    let action = 'Forgot password ' + this.state.email
+    if(this.state.email === ""){action = 'Forgot password for NULL USER'}
+    post_log(action)
 
     e.preventDefault()
 
