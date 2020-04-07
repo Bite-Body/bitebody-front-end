@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import LoadingOverlay from 'react-loading-overlay'
 import { resetPass } from './UserFunctions'
 import FourOhFour from './404'
+import { post_log } from './Logger/Logger'
 
 class ResetPassword extends Component {
   constructor() {
@@ -25,6 +26,10 @@ class ResetPassword extends Component {
 
   onSubmit(e) { //EDIT EVENT HANDLER TO activate email api 
     this.setState({loading: true })
+
+    let action = 'Reset Password for ' + this.state.email
+    if(this.state.email === ""){action = 'Reset Password for NULL USER'}
+    post_log(action)
 
     e.preventDefault()
 
