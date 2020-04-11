@@ -9,6 +9,7 @@ class Register extends Component {
   constructor() {
     super()
     this.state = {
+      username: '',
       first_name: '',
       last_name: '',
       email: '',
@@ -35,6 +36,7 @@ class Register extends Component {
     e.preventDefault()
 
     const newUser = {
+      username: this.state.username,
       first_name: this.state.first_name,
       last_name: this.state.last_name,
       email: this.state.email,
@@ -42,6 +44,11 @@ class Register extends Component {
     }
 
     let valid = true
+
+    if(this.state.username === ''){
+      this.setState({errors: 'Username field is missing.\n'})
+      valid = false
+    }
 
     if(this.state.first_name === ''){
       this.setState({errors: 'First name field is missing.\n'})
@@ -110,6 +117,17 @@ class Register extends Component {
 
             <form noValidate onSubmit={this.onSubmit}>
               <h1 className="h3 mb-3 font-weight-normal">Register</h1>
+              <div className="form-group">
+                <label htmlFor="name">Username</label>
+                <input
+                  type="text"
+                  className="form-control"
+                  name="username"
+                  placeholder="Enter your desired username"
+                  value={this.state.username}
+                  onChange={this.onChange}
+                />
+              </div>
               <div className="form-group">
                 <label htmlFor="name">First name</label>
                 <input

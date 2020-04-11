@@ -5,6 +5,7 @@ axios.defaults.baseURL = 'https://gentle-inlet-25364.herokuapp.com'
 export const register = newUser => {
   return axios
     .post('users', {
+      username: newUser.username,
       first_name: newUser.first_name,
       last_name: newUser.last_name,
       email: newUser.email,
@@ -21,7 +22,7 @@ export const register = newUser => {
 export const login = user => {
   return axios
     .post('users/login', { 
-      email: user.email,
+      username_or_email: user.username_or_email,
       password: user.password
     })
     .then(response => {
