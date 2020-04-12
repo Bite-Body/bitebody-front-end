@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import LoadingOverlay from 'react-loading-overlay'
 import { register } from './UserFunctions'
 import FourOhFour from './404'
+import { post_log } from './Logger/Logger'
+
 
 class Register extends Component {
   constructor() {
@@ -24,6 +26,11 @@ class Register extends Component {
   }
   onSubmit(e) {
     this.setState({loading: true})
+
+
+    let action = 'Register ' + this.state.email
+    if(this.state.email === ""){action = 'Register for NULL USER'}
+    post_log(action)
 
     e.preventDefault()
 

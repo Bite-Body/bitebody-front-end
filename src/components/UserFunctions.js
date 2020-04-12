@@ -1,5 +1,5 @@
 import axios from 'axios'
-
+//THIS IS WHERE THE LINKAGE HAPPENS, YO!
 axios.defaults.baseURL = 'https://gentle-inlet-25364.herokuapp.com'
 
 export const register = newUser => {
@@ -46,6 +46,22 @@ export const forgotPass = cluelessUser => {
   return axios
   .post('users/forgot-password', {
     email: cluelessUser.email
+  })
+  .then(response => {
+    return response.data
+  })
+  .catch(err => {
+    console.log(err)
+  })
+}
+
+export const resetPass = resetUser => {
+  return axios
+  .post('users/reset-password', {
+    email: resetUser.email,
+    password: resetUser.password,
+    confirmed_password: resetUser.confirmed_password,
+    reset_key: resetUser.reset_key
   })
   .then(response => {
     return response.data

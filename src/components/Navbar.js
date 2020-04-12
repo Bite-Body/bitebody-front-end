@@ -34,8 +34,8 @@ class Navbar extends Component {
           <div className="dropdown-menu">
             <div className="dropdown-divider"></div>
             <Link className="dropdown-item" to="/body-picker">Pick yo body part</Link>
-            <Link className="dropdown-item" to="/">Search Workouts</Link>
-            <Link className="dropdown-item" to="/">Create Workouts</Link>
+            <Link className="dropdown-item" to="/searchworkouts">Search Workouts</Link>
+            <Link className="dropdown-item" to="/createworkouts">Create Workouts</Link>
             <Link className="dropdown-item" to="/workout-plans">Workout Plans</Link>
             <div className="dropdown-divider"></div>
             <Link className="dropdown-item" to="/meal-planner">Meal Planner</Link>

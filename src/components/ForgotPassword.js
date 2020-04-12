@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import LoadingOverlay from 'react-loading-overlay'
 import {forgotPass} from './UserFunctions'
-import {Link} from 'react-router-dom';
+import FourOhFour from './404'
+import { post_log } from './Logger/Logger'
 
 class ForgotPassword extends Component {
   constructor() {
@@ -24,6 +25,10 @@ class ForgotPassword extends Component {
   onSubmit(e) { //EDIT EVENT HANDLER TO activate email api 
     this.setState({loading: true })
 
+    let action = 'Forgot password ' + this.state.email
+    if(this.state.email === ""){action = 'Forgot password for NULL USER'}
+    post_log(action)
+
     e.preventDefault()
 
     const cluelessUser = {
@@ -33,11 +38,11 @@ class ForgotPassword extends Component {
     forgotPass(cluelessUser).then(res => {
       console.log(res)
       if (res.Allow === "yes") {
-        this.props.history.push('/reset-password')
+        this.props.history.push('/email-sent')
       }
       else if(res.Error === "Unable to perform operation.")
       {
-        this.props.history.push('/email-sent')
+        this.props.history.push('/email-not-sent')
         this.setState({errors: res.Error})
         this.setState({loading: false })
       }
@@ -51,56 +56,65 @@ class ForgotPassword extends Component {
   }
 
   render() {
-
-    return (
-      <>
-      <LoadingOverlay
-      active={this.state.loading}
-      spinner
-      text='Sending email confirmation'
-      >
-      <div className="container">
+    if(!(localStorage.usertoken))
+    {
+      return (
+        <>
+        <LoadingOverlay
+        active={this.state.loading}
+        spinner
+        text='Sending email confirmation'
+        >
+        <div className="container">
+            
           
-        
-        <div className="row">
-          <div className="col-md-6 mt-5 mx-auto">
+          <div className="row">
+            <div className="col-md-6 mt-5 mx-auto">
 
-            <p style={{color: 'red'}}>{this.state.errors}</p>
+              <p style={{color: 'red'}}>{this.state.errors}</p>
 
-            <form noValidate onSubmit={this.onSubmit}>
-              <h1 className="h3 mb-3 font-weight-normal">Complete fields to finish updating account credentials</h1>
-              <div className="form-group">
-                <label htmlFor="email">Email address</label>
-                <input
-                  type="email"
-                  className="form-control"
-                  name="email"
-                  placeholder="Enter email"
-                  value={this.state.email}
-                  onChange={this.onChange}
-                />
-              </div>
-          
+              <form noValidate onSubmit={this.onSubmit}>
+                <h1 className="h3 mb-3 font-weight-normal">Complete fields to finish updating account credentials</h1>
+                <div className="form-group">
+                  <label htmlFor="email">Email address</label>
+                  <input
+                    type="email"
+                    className="form-control"
+                    name="email"
+                    placeholder="Enter email"
+                    value={this.state.email}
+                    onChange={this.onChange}
+                  />
+                </div>
+            
 
 
-              <button
-                type="submit"
-                className="btn btn-lg btn-primary btn-block"
-              >
-                Reset my password
-              </button>
-            </form>
+                <button
+                  type="submit"
+                  className="btn btn-lg btn-primary btn-block"
+                >
+                  Reset my password
+                </button>
+              </form>
+            </div>
           </div>
-        </div>
-        <br/>
-        <br/>
-        <br/>
+          <br/>
+          <br/>
+          <br/>
 
-        
-      </div>
-      </LoadingOverlay>
-      </>
-    )
+          
+        </div>
+        </LoadingOverlay>
+        </>
+      )
+    }
+    else{
+      return(
+        <>
+          <FourOhFour/>
+        </>
+      )
+    }
   }
 }
 
