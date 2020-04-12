@@ -29,7 +29,7 @@ class Login extends Component {
     e.preventDefault()
 
     const user = {
-      email: this.state.email,
+      email_or_user: this.state.email,
       password: this.state.password
     }
 
@@ -66,7 +66,7 @@ class Login extends Component {
             <form noValidate onSubmit={this.onSubmit}>
               <h1 className="h3 mb-3 font-weight-normal">Sign In</h1>
               <div className="form-group">
-                <label htmlFor="email">Email address</label>
+                <label htmlFor="email">Email Address or Username</label>
                 <input
                   type="email"
                   className="form-control"
