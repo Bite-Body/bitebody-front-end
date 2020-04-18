@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import LoadingOverlay from 'react-loading-overlay'
 import FourOhFour from './404'
 
-class ForgotPassword extends Component {
+class CR extends Component {
   constructor() {
     super()
     this.state = {
@@ -60,4 +60,4 @@ class ForgotPassword extends Component {
   }
 }
 
-export default CompleteRegistration
+export default CR

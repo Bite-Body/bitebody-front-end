@@ -21,6 +21,7 @@ import Features from './components/FooterLinks/Features'
 import Goals from './components/FooterLinks/Goals'
 import BodyPicker from './components/BodyPicker/BodyPicker'
 import TOS from './components/FooterLinks/TermsOfService'
+import CompleteReg from './components/CompleteRegistration'
 import ForgotPass from './components/ForgotPassword'
 import ResetPass from './components/ResetPassword'
 import EmailNotSent from './components/EmailUnableToSend'
@@ -30,7 +31,6 @@ import WorkoutPlans from './components/WorkoutPlans/WorkoutPlans'
 import MealSelection from './components/MealSelection/MealSelection'
 import SearchWorkout from './components/SearchWorkouts/SearchWorkout'
 import CreateWorkout from './components/CreateWorkout/CreateWorkout'
-import CompleteRegistration from './components/CompleteRegistration'
 //
 
 class App extends Component {
@@ -47,6 +47,7 @@ class App extends Component {
             <Route exact path = "/email-not-sent" component = {EmailNotSent}/>
             <Route exact path = "/email-sent" component = {EmailSent}/>
             <Route exact path = "/pass-reset-success" component = {PassResetComplete}/>
+            <Route exact path = "/CR" component = {CompleteReg}/>
             <Route exact path="/register" component={Register} />
             <Route exact path="/faq" component={FAQ} />
             <Route exact path = "/tos" component = {TOS} />
@@ -66,7 +67,6 @@ class App extends Component {
             <Route exact path="/meal-selection" component={MealSelection} />
             <Route exact path="/searchWorkouts" component={SearchWorkout} />
             <Route exact path="/createWorkouts" component={CreateWorkout} />
-            <Route exact path = "/complete-Registration" component = {CompleteRegistration} />
             <Route path="*" component={FourOhFour} />
             <Redirect from="*" to="/404" />
             
