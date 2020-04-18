@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import LoadingOverlay from 'react-loading-overlay'
-import FourOhFour from './404'
+
 
 class CR extends Component {
   constructor() {
@@ -16,7 +16,7 @@ class CR extends Component {
 
 
   render() {
-    if(!(localStorage.usertoken)){
+
       return (
         <>
         <LoadingOverlay
@@ -49,15 +49,6 @@ class CR extends Component {
         </>
       )
     }
-    else
-    {
-      return(
-        <>
-          <FourOhFour/>
-        </>
-      )
-    }
   }
-}
 
 export default CR
