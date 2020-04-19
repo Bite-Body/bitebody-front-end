@@ -72,6 +72,19 @@ export const resetPass = resetUser => {
   })
 }
 
+export const registerKey = registeringUser => {
+  return axios
+  .post('users/finalize-registration', {
+    regKey: registeringUser.RegKey
+  })
+  .then(response => {
+    return response.data
+  })
+  .catch(err => {
+    console.log(err)
+  })
+}
+
 export const calorieCalc = payload => {
   console.log(payload)
   return axios

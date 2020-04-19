@@ -7,6 +7,7 @@ import Footer from './components/Footer'
 import FourOhFour from './components/404'
 import Login from './components/Login'
 import Register from './components/Register'
+import RegisterKey from './components/RegisterKey'
 import FAQ from './components/FooterLinks/FAQ'
 import About from './components/FooterLinks/About'
 import Documentation from './components/FooterLinks/Documentation'
@@ -49,6 +50,7 @@ class App extends Component {
             <Route exact path = "/pass-reset-success" component = {PassResetComplete}/>
             <Route exact path = "/CR" component = {CompleteReg}/>
             <Route exact path="/register" component={Register} />
+            <Route exact path = "/finalize-registration" component = {RegisterKey} />
             <Route exact path="/faq" component={FAQ} />
             <Route exact path = "/tos" component = {TOS} />
             <Route exact path="/about" component={About} />
