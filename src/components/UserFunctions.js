@@ -75,7 +75,7 @@ export const resetPass = resetUser => {
 export const registerKey = registeringUser => {
   return axios
   .post('users/finalize-registration', {
-    regKey: registeringUser.RegKey
+    reg_key: registeringUser.reg_key
   })
   .then(response => {
     return response.data
