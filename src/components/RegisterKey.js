@@ -8,7 +8,7 @@ class RegisterKey extends Component {
   constructor() {
     super()
     this.state = {
-      reg_key: '',
+      confirmation_key: '',
       errors: '',
       loading: false
     }
@@ -32,7 +32,7 @@ class RegisterKey extends Component {
     e.preventDefault()
 
     const registeringUser = {
-      reg_key: this.state.reg_key
+    confirmation_key: this.state.confirmation_key
     }
 
     registerKey(registeringUser).then(res => {
@@ -79,13 +79,13 @@ class RegisterKey extends Component {
               <form noValidate onSubmit={this.onSubmit}>
                 <h1 className="h3 mb-3 font-weight-normal">Finalize Account Registration</h1>
                 <div className="form-group">
-                  <label htmlFor="reg_key">Register Key!!</label>
+                  <label htmlFor="confirmation_key">Register Key!!</label>
                   <input
-                    type="reg_key"
+                    type="confirmation_key"
                     className="form-control"
-                    name="reg_key"
+                    name="confirmation_key"
                     placeholder="Register Key"
-                    value={this.state.reg_key}
+                    value={this.state.confirmation_key}
                     onChange={this.onChange}
                   />
                 </div>
