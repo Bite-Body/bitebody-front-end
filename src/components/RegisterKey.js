@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import LoadingOverlay from 'react-loading-overlay'
-import { resetPass } from './UserFunctions'
+import { registerKey } from './UserFunctions'
 import FourOhFour from './404'
 import { post_log } from './Logger/Logger'
 
