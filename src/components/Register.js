@@ -75,7 +75,7 @@ class Register extends Component {
         try {
           console.log(res)
           if (res.code === 201) {
-            this.props.history.push('/login')
+            this.props.history.push('/CR')
           }
           else{
             this.props.history.push('/register')
