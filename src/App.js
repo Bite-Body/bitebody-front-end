@@ -21,6 +21,18 @@ import Privacy from './components/FooterLinks/Privacy'
 import Features from './components/FooterLinks/Features'
 import Goals from './components/FooterLinks/Goals'
 import BodyPicker from './components/BodyPicker/BodyPicker'
+import BodyPickerTriceps from './components/BodyPicker/Triceps'
+import BodyPickerBiceps from './components/BodyPicker/Biceps'
+import BodyPickerBack from './components/BodyPicker/Back'
+import BodyPickerGlutes from './components/BodyPicker/Glutes'
+import BodyPickerLowerLegs from './components/BodyPicker/LowerLegs'
+import BodyPickerCardio from './components/BodyPicker/Cardio'
+import BodyPickerShoulders from './components/BodyPicker/Shoulders'
+import BodyPickerChest from './components/BodyPicker/Chest'
+import BodyPickerForearms from './components/BodyPicker/Forearms'
+import BodyPickerAbs from './components/BodyPicker/Abs'
+import BodyPickerUpperLegs from './components/BodyPicker/UpperLegs'
+import BodyPickerAll from './components/BodyPicker/All'
 import TOS from './components/FooterLinks/TermsOfService'
 import CompleteReg from './components/CompleteRegistration'
 import ForgotPass from './components/ForgotPassword'
@@ -43,16 +55,16 @@ class App extends Component {
           <Switch>
             <Route exact path="/" component={Landing} />
             <Route exact path="/login" component={Login} />
-            <Route exact path = "/forgot-password" component={ForgotPass} />
-            <Route exact path = "/reset-password" component={ResetPass}/>
-            <Route exact path = "/email-not-sent" component = {EmailNotSent}/>
-            <Route exact path = "/email-sent" component = {EmailSent}/>
-            <Route exact path = "/pass-reset-success" component = {PassResetComplete}/>
-            <Route exact path = "/CR" component = {CompleteReg}/>
+            <Route exact path="/forgot-password" component={ForgotPass} />
+            <Route exact path="/reset-password" component={ResetPass}/>
+            <Route exact path="/email-not-sent" component = {EmailNotSent}/>
+            <Route exact path="/email-sent" component = {EmailSent}/>
+            <Route exact path="/pass-reset-success" component = {PassResetComplete}/>
+            <Route exact path="/CR" component = {CompleteReg}/>
             <Route exact path="/register" component={Register} />
-            <Route exact path = "/finalize-registration" component = {RegisterKey} />
+            <Route exact path="/finalize-registration" component = {RegisterKey} />
             <Route exact path="/faq" component={FAQ} />
-            <Route exact path = "/tos" component = {TOS} />
+            <Route exact path="/tos" component = {TOS} />
             <Route exact path="/about" component={About} />
             <Route exact path="/documentation" component={Documentation} />
             <Route exact path="/team" component={Team} />
@@ -64,6 +76,18 @@ class App extends Component {
             <Route exact path="/privacy" component={Privacy} />
             <Route exact path="/features" component={Features} />
             <Route exact path="/body-picker" component={BodyPicker} />
+            <Route exact path="/body-picker/triceps" component={BodyPickerTriceps} />
+            <Route exact path="/body-picker/biceps" component={BodyPickerBiceps} />
+            <Route exact path="/body-picker/back" component={BodyPickerBack} />
+            <Route exact path="/body-picker/glutes" component={BodyPickerGlutes} />
+            <Route exact path="/body-picker/lower-legs" component={BodyPickerLowerLegs} />
+            <Route exact path="/body-picker/cardio" component={BodyPickerCardio} />
+            <Route exact path="/body-picker/shoulders" component={BodyPickerShoulders} />
+            <Route exact path="/body-picker/chest" component={BodyPickerChest} />
+            <Route exact path="/body-picker/forearms" component={BodyPickerForearms} />
+            <Route exact path="/body-picker/abs" component={BodyPickerAbs} />
+            <Route exact path="/body-picker/upper-legs" component={BodyPickerUpperLegs} />
+            <Route exact path="/body-picker/all" component={BodyPickerAll} />
             <Route exact path="/goals" component={Goals} />
             <Route exact path="/workout-plans" component={WorkoutPlans} />
             <Route exact path="/meal-selection" component={MealSelection} />
