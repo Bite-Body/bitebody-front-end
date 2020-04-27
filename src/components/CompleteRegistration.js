@@ -33,8 +33,13 @@ class CR extends Component {
               <p style={{color: 'red'}}>{this.state.errors}</p>
 
               <form noValidate onSubmit={this.onSubmit}>
-                <h1 className="h3 mb-3 font-weight-normal">Thank You for making an account! To activate please check you email and follow directions enclosed. </h1>
-                
+                <h1 className="h3 mb-3 font-weight-normal">Thank You for making an account! </h1> 
+                <br/>
+                <p>
+                <font size = "2" face = "arial">
+                </font>
+                To activate and continue within the website please check your email and follow the directions enclosed.
+                </p>
             
               </form>
             </div>

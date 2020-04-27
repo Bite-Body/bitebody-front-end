@@ -33,8 +33,11 @@ class ForgotPassword extends Component {
               <p style={{color: 'red'}}>{this.state.errors}</p>
 
               <form noValidate onSubmit={this.onSubmit}>
-                <h1 className="h3 mb-3 font-weight-normal">Email Successfully Sent! Please check email address and follow enclosed instructions for password reset instructions! </h1>
-                
+                <h1 className="h3 mb-3 font-weight-normal">Reset Instructions have been successfully sent! </h1>
+                <br/>
+                <p>
+                Please check email address and follow enclosed instructions for password reset instructions! 
+                </p>
             
               </form>
             </div>

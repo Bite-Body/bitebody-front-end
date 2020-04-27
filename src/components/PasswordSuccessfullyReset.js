@@ -32,8 +32,12 @@ class ForgotPassword extends Component {
               <p style={{color: 'red'}}>{this.state.errors}</p>
 
               <form noValidate onSubmit={this.onSubmit}>
-                <h1 className="h3 mb-3 font-weight-normal">You have successfully reset your password! Navigate to log in page and input new credentials! </h1>
-                
+                <h1 className="h3 mb-3 font-weight-normal">You have successfully reset your password! </h1>
+                <p>
+                <font size = "2" face = "arial">
+                </font>
+                Navigate to log in page and input new credentials! 
+                </p>
             
               </form>
             </div>
