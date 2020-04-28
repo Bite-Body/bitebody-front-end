@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import Card from './Card'
 
 class UpperLegs extends Component {
   constructor(props) {
@@ -25,14 +26,19 @@ class UpperLegs extends Component {
       <div className="container">
       <h1><center>Pick Your Body Part - UpperLegs</center></h1>
 
-      {data.map(data =>
-      <>
-        <li>
-      <strong>{data.workout_name} ({data.main_muscle_group})</strong>: {data.exercise_steps}
-        </li>
-        <br/>
-      </>
-      )}
+      <br/>
+          <div className="row">
+            
+            {data.map(data =>
+            <div style={{marginLeft: '1em'}}>
+              <Card name={data.workout_name}
+              imgsrc= "https://bryanimages.s3.amazonaws.com/fitness.jpg"
+              title = {data.workout_name}
+              text = {data.exercise_steps} 
+              muscle = {data.main_muscle_group}/>
+            </div>
+            )}
+          </div>
 
     </div>
 
