@@ -33,7 +33,7 @@ class Abs extends Component {
             {data.map(data =>
             <div style={{marginLeft: '1em'}}>
               <Card name={data.workout_name}
-              imgsrc= "https://bryanimages.s3.amazonaws.com/fitness.jpg"
+              imgsrc= {data.image_path}
               title = {data.workout_name}
               text = {data.exercise_steps} 
               muscle = {data.main_muscle_group}/>

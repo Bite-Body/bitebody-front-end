@@ -7,7 +7,7 @@ const Card = props =>{
         <div className="card text-center shadow">
             <div className="overflow">
                 <br/>
-                <img src ={props.imgsrc} alt ={props.title} height="80px" className ="g-tocard-imp"/>
+                <img src ={props.imgsrc} alt ={props.title} height="180px" className ="g-tocard-imp"/>
             </div>
             <div className="card-body text-dark">
                 <h4 className="card-title"><b>{props.title}</b></h4>
