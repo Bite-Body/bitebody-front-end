@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import "../../static/css/Search.css";
-import $ from 'jquery'; 
+
 class SearchWorkout extends Component {
     render() {
       return (
