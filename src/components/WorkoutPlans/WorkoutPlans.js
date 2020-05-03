@@ -14,7 +14,7 @@ class WorkoutPlans extends Component {
     async componentDidMount() {
         document.title = "Bitebody - Curated Workouts";
         // GET request using fetch with async/await
-        const response = await fetch('http://api.bitebody.xyz/curated_workout/all');
+        const response = await fetch('https://gentle-inlet-25364.herokuapp.com/curated_workout/all');
         const data = await response.json();
         this.setState({data: data['curated_workouts']})
         console.log(this.state);
