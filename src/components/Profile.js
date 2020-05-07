@@ -43,27 +43,27 @@ class Profile extends Component {
                 <div class="row">
                     <div class="col-md-4">
                         <div class="profile-img">
-                            <img src={david} alt=""/>
-                            <div class="file btn btn-lg btn-primary">
-                                Change Photo
-                                <input type="file" name="file"/>
-                            </div>
+                            <img src={david} alt="" style={{height: '200px', width: '200px'}}/>
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="profile-head">
-                            <h5>
+                            <h3>
+                                <strong>
                                 {this.state.username}
-                            </h5>
+                                </strong>
+                            </h3>
                             <h6>
                                 Collaborator
                             </h6>
                         </div>
                     </div>
                     <div class="col-md-2">
-                        <input type="submit" class="profile-edit-btn" name="btnAddMore" value="Edit Profile"/>
+                        <a href="/edit-profile" class="profile-edit-btn">Edit Profile
+                        </a>
                     </div>
                 </div>
+                <br/>
                 <div class="row">
                     <div class="col-md-1"></div>
                     <div class="col-md-10" >
