@@ -9,7 +9,6 @@ class WorkoutPlans extends Component {
       errors: '',
       loading: false
     }
-    
 
     this.onChange = this.onChange.bind(this)
     this.onSubmit = this.onSubmit.bind(this)
@@ -44,7 +43,7 @@ class WorkoutPlans extends Component {
       }
     })
   }
-  
+
     render() {
       return (
         <div id="landing">
