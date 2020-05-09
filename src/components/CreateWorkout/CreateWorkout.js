@@ -1,7 +1,50 @@
 import React, { Component } from 'react'
 
 class WorkoutPlans extends Component {
-     
+  constructor() {
+    super()
+    this.state = {
+      email: '',
+      password: '',
+      errors: '',
+      loading: false
+    }
+    
+
+    this.onChange = this.onChange.bind(this)
+    this.onSubmit = this.onSubmit.bind(this)
+  }
+
+  onChange(e) {
+    this.setState({ [e.target.name]: e.target.value })
+  }
+
+  onSubmit(e) {
+    this.setState({loading: true })
+
+    let action = 'SUBMIT /login for ' + this.state.email
+    if(this.state.email === ""){action = 'SUBMIT /login for NULL USER'}
+    post_log(action)
+
+    e.preventDefault()
+
+    const user = {
+      username_or_email: this.state.email,
+      password: this.state.password
+    }
+
+    login(user).then(res => {
+      if (res.Allow !== "no") {
+        this.props.history.push('/')
+      }
+      else{
+        this.props.history.push('/login')
+        this.setState({errors: res.Error})
+        this.setState({loading: false })
+      }
+    })
+  }
+  
     render() {
       return (
         <div id="landing">
