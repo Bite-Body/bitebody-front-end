@@ -41,7 +41,7 @@ const Carousel = () => {
                   <div class="mask rgba-black-strong"></div>
                 </div>
                 <div class="carousel-caption">
-                  <Link to="/" type="button" class="btn btn-primary"  style={{marginTop: '1em', marginBottom: '1em'}}>Search Workouts</Link>
+                  <Link to="/searchworkouts" type="button" class="btn btn-primary"  style={{marginTop: '1em', marginBottom: '1em'}}>Search Workouts</Link>
                 </div>
               </div>
 
@@ -52,7 +52,7 @@ const Carousel = () => {
                   <div class="mask rgba-black-slight"></div>
                 </div>
                 <div class="carousel-caption">
-                  <Link to="/" type="button" class="btn btn-primary"  style={{marginTop: '1em', marginBottom: '1em'}}>Create Workouts</Link>
+                  <Link to="/createworkouts" type="button" class="btn btn-primary"  style={{marginTop: '1em', marginBottom: '1em'}}>Create Workouts</Link>
                 </div>
               </div>
 
@@ -96,7 +96,7 @@ const Carousel = () => {
                   <div class="mask rgba-black-slight"></div>
                 </div>
                 <div class="carousel-caption">
-                  <Link to="/meal-selection" type="button" class="btn btn-primary"  style={{marginTop: '1em', marginBottom: '1em'}}>Meal Selection</Link>
+                  <Link to="/weight-loss" type="button" class="btn btn-primary"  style={{marginTop: '1em', marginBottom: '1em'}}>Weight Loss</Link>
                 </div>
               </div>
 
