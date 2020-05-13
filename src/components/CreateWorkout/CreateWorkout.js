@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import { post_log } from '../Logger/Logger'
+import { login } from '../UserFunctions'
 
 class WorkoutPlans extends Component {
   constructor() {

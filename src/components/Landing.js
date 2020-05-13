@@ -3,7 +3,7 @@ import jwt_decode from 'jwt-decode'
 import Carousel from './Landing/Carousel'
 import '../static/css/Landing.css'
 import screenshot from '../static/images/iphone_scr.png'
-
+import screenshot_ipad from '../static/images/ipad_scr.png'
 var welcome = {
   fontSize: 50
 };
@@ -51,7 +51,7 @@ class Landing extends Component {
 
 
         <div className="row">
-          <div className="col-sm-2 mx-auto">
+          <div className="col-sm-1 mx-auto">
             <br/>
           </div>
 
@@ -61,13 +61,7 @@ class Landing extends Component {
 
           </div>
           <div className="col-sm-4 mx-auto">
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <center><p><h3>Our application is accessible on mobile view as well!</h3></p></center>
+            <center><img src={screenshot_ipad} alt="Bitebody Ipad" height="500px"></img></center>
 
           </div>
 
