@@ -45,6 +45,7 @@ import MealSelection from './components/MealSelection/MealSelection'
 import SearchWorkout from './components/SearchWorkouts/SearchWorkout'
 import CreateWorkout from './components/CreateWorkout/CreateWorkout'
 import EditProfile from './components/Profile/EditProfile'
+import WeightLoss from './components/WeightLoss/WeightLoss'
 
 class App extends Component {
   render() {
@@ -94,6 +95,7 @@ class App extends Component {
             <Route exact path="/searchWorkouts" component={SearchWorkout} />
             <Route exact path="/createWorkouts" component={CreateWorkout} />
             <Route exact path="/edit-profile" component={EditProfile} />
+            <Route exact path="/weight-loss" component={WeightLoss} />
             <Route path="*" component={FourOhFour} />
             <Redirect from="*" to="/404" />
             
