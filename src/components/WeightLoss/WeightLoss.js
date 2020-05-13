@@ -12,11 +12,11 @@ class WeightLoss extends Component {
 
 
     async componentDidMount() {
-        document.title = "Bitebody - Curated Workouts";
+        document.title = "Bitebody - Weight Loss";
         // GET request using fetch with async/await
-        const response = await fetch('https://gentle-inlet-25364.herokuapp.com/curated_workout/all');
+        const response = await fetch('https://gentle-inlet-25364.herokuapp.com/weight_loss/all');
         const data = await response.json();
-        this.setState({data: data['curated_workouts']})
+        this.setState({data: data['Weight_Loss']})
         console.log(this.state);
     }
      
@@ -26,7 +26,7 @@ class WeightLoss extends Component {
       return (
         <>
         <div className="container">
-          <h1><center>Curated Workouts</center></h1>
+          <h1><center>Weight Loss</center></h1>
 
           <br/>
           <div className="row">
