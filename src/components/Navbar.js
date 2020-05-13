@@ -40,7 +40,6 @@ class Navbar extends Component {
             <div className="dropdown-divider"></div>
             <Link className="dropdown-item" to="/meal-planner">Meal Planner</Link>
             <Link className="dropdown-item" to="/calculator">Calorie Calculator</Link>
-            <Link className="dropdown-item" to="/meal-selection">Meal Selection</Link>
             <Link className="dropdown-item" to="/weight-loss">Weight Loss</Link>
           </div>
         </li>
