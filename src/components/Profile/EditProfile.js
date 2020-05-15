@@ -1,6 +1,79 @@
 import React, { Component } from 'react'
-
+import jwt_decode from 'jwt-decode'
+import axios from 'axios'
 class EditProfile extends Component {
+  constructor() {
+    super()
+    this.state = {
+      display_name: '',
+      title: '',
+      age: '',
+      bio: '',
+      gender: '',
+      username: '',
+      first_name: '',
+      last_name: '',
+      email: '',
+      id: '',
+      loading: false
+    }
+
+    this.onChange = this.onChange.bind(this)
+    this.onSubmit = this.onSubmit.bind(this)
+  }
+
+  componentDidMount() {
+    const token = localStorage.usertoken
+    try{
+      const decoded = jwt_decode(token)
+      this.setState({
+        first_name: decoded.identity.first_name,
+        last_name: decoded.identity.last_name,
+        email: decoded.identity.email,
+        id: decoded.identity.id,
+        username: decoded.identity.username
+      })
+    }
+    catch(error){}
+
+    document.title = "Bitebody - Edit Profile"
+  }
+
+  onChange(e) {
+    this.setState({ [e.target.name]: e.target.value })
+    console.log(this.state)
+  }
+
+  onSubmit(e) {
+    this.setState({loading: true })
+
+    e.preventDefault()
+
+    let payload = {
+      "id": this.state.id,
+      "nickname": this.state.display_name,
+      "title": this.state.title,
+      "age": this.state.age,
+      "bio": this.state.bio,
+      "gender": this.state.gender,
+    }
+
+    console.log(payload)
+
+    e.preventDefault()
+
+    axios.post('profile', payload)
+    .then(response => {
+      console.log(JSON.stringify(response.data))
+      this.setState({loading: false })
+    })
+    .catch(err => {
+      console.log(err)
+      this.setState({loading: false })
+    })
+
+  }
+
 
     render() {
       return (
@@ -27,7 +100,7 @@ class EditProfile extends Component {
                         <label for="exampleFormControlSelect1">Display Name</label>
                       </div>
                       <div className="col-md-8" style={{marginRight: '1em', marginLeft: '1em'}}>
-                        <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Please enter the desired display name"/>
+                        <input name="display_name" value={this.state.display_name} onChange={this.onChange} type="text" class="form-control" id="formGroupExampleInput" placeholder="Please enter the desired display name"/>
                       </div>
                     </div>
 
@@ -37,7 +110,7 @@ class EditProfile extends Component {
                         <label for="exampleFormControlSelect1">Title</label>
                       </div>
                       <div className="col-md-8" style={{marginRight: '1em', marginLeft: '1em'}}>
-                        <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Please enter the desired title"/>
+                        <input name="title" value={this.state.title} onChange={this.onChange} type="text" class="form-control" id="formGroupExampleInput" placeholder="Please enter your desired title"/>
                       </div>
                     </div>
 
@@ -45,14 +118,35 @@ class EditProfile extends Component {
 
                     <div className="row">
                       <div className="col-md-2" style={{marginTop: '0.5em', marginRight: '1em', marginLeft: '1em'}}>
-                        <label for="exampleFormControlSelect1">New Email</label>
+                        <label for="exampleFormControlSelect1">Age</label>
                       </div>
                       <div className="col-md-8" style={{marginRight: '1em', marginLeft: '1em'}}>
-                        <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Please enter the new email"/>
+                        <input name="age" value={this.state.age} onChange={this.onChange} type="text" class="form-control" id="formGroupExampleInput" placeholder="How young are you?"/>
                       </div>
                     </div>
 
-                    
+                    <br/>
+
+                    <div className="row">
+                      <div className="col-md-2" style={{marginTop: '0.5em', marginRight: '1em', marginLeft: '1em'}}>
+                        <label for="exampleFormControlSelect1">Bio</label>
+                      </div>
+                      <div className="col-md-8" style={{marginRight: '1em', marginLeft: '1em'}}>
+                        <textarea name="bio" value={this.state.bio} onChange={this.onChange} type="text" class="form-control" id="formGroupExampleInput" placeholder="Enter whatever describes you. ^-^ ~ teehee <3 uwu"/>
+                      </div>
+                    </div>
+
+                    <br/>
+
+                    <div className="row">
+                      <div className="col-md-2" style={{marginTop: '0.5em', marginRight: '1em', marginLeft: '1em'}}>
+                        <label for="exampleFormControlSelect1">Gender</label>
+                      </div>
+                      <div className="col-md-8" style={{marginRight: '1em', marginLeft: '1em'}}>
+                        <textarea name="gender" value={this.state.gender} onChange={this.onChange} type="text" class="form-control" id="formGroupExampleInput" placeholder="Whatever describes you!"/>
+                      </div>
+                    </div>
+
                     <br/>
                     <br/>
                     </div>

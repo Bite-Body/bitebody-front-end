@@ -1,14 +1,21 @@
 import React, { Component } from 'react'
-import { post_log } from '../Logger/Logger'
-import { login } from '../UserFunctions'
+import axios from 'axios'
 
 class WorkoutPlans extends Component {
   constructor() {
     super()
     this.state = {
-      email: '',
-      password: '',
-      errors: '',
+      detailed_muscle_group: '',
+      difficulty: 'Beginner',
+      equipment: '',
+      excercise_steps: '',
+      id: '',
+      image_path: '',
+      main_muscle_group: 'Abs',
+      mechanics: 'N/A',
+      other_muscle_groups: '',
+      type: 'Cardio',
+      workout_name: '',
       loading: false
     }
 
@@ -18,32 +25,42 @@ class WorkoutPlans extends Component {
 
   onChange(e) {
     this.setState({ [e.target.name]: e.target.value })
+    console.log(this.state)
   }
 
   onSubmit(e) {
     this.setState({loading: true })
 
-    let action = 'SUBMIT /login for ' + this.state.email
-    if(this.state.email === ""){action = 'SUBMIT /login for NULL USER'}
-    post_log(action)
+    e.preventDefault()
+
+    let payload = {
+      "detailed_muscle_group": "",
+      "difficulty": this.state.difficulty,
+      "equipment": this.state.equipment,
+      "excercise_steps": this.state.excercise_steps,
+      "id": "0",
+      "image_path": "https://bryanimages.s3.amazonaws.com/fitness.jpg",
+      "main_muscle_group": this.state.main_muscle_group,
+      "mechanics": this.state.mechanics,
+      "other_muscle_groups": "",
+      "type": this.state.type,
+      "workout_name": this.state.workout_name
+    }
+
+    console.log(payload)
 
     e.preventDefault()
 
-    const user = {
-      username_or_email: this.state.email,
-      password: this.state.password
-    }
-
-    login(user).then(res => {
-      if (res.Allow !== "no") {
-        this.props.history.push('/')
-      }
-      else{
-        this.props.history.push('/login')
-        this.setState({errors: res.Error})
-        this.setState({loading: false })
-      }
+    axios.post('workouts', payload)
+    .then(response => {
+      console.log(JSON.stringify(response.data))
+      this.setState({loading: false })
     })
+    .catch(err => {
+      console.log(err)
+      this.setState({loading: false })
+    })
+
   }
 
     render() {
@@ -74,17 +91,17 @@ class WorkoutPlans extends Component {
                         <label for="exampleFormControlSelect1">Workout Name</label>
                       </div>
                       <div className="col-md-8" style={{marginRight: '1em', marginLeft: '1em'}}>
-                        <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Please enter the name of your workouts"/>
+                        <input type="text" name="workout_name" value={this.state.workout_name} onChange={this.onChange} class="form-control" id="formGroupExampleInput" placeholder="Name of your workout"/>
                       </div>
                     </div>
 
                     <br/>
                     <div className="row">
                       <div className="col-md-2" style={{marginTop: '0.5em', marginRight: '1em', marginLeft: '1em'}}>
-                        <label for="exampleFormControlSelect1">Body Part</label>
+                        <label for="exampleFormControlSelect1">Main Body Part</label>
                       </div>
                       <div className="col-md-8" style={{marginRight: '1em', marginLeft: '1em'}}>
-                        <select className="form-control" id="Please enter Body Part to workout">
+                        <select className="form-control" id="exampleFormControlSelect1" name="main_muscle_group" value={this.state.main_muscle_group} onChange={this.onChange}>
                           <option>Abs</option>
                           <option>Biceps</option>
                           <option>Triceps</option>
@@ -102,25 +119,70 @@ class WorkoutPlans extends Component {
 
                     <div className="row">
                       <div className="col-md-2" style={{marginTop: '0.5em', marginRight: '1em', marginLeft: '1em'}}>
-                        <label for="exampleFormControlSelect1">Duration</label>
+                        <label for="exampleFormControlSelect1">Difficulty</label>
                       </div>
                       <div className="col-md-8" style={{marginRight: '1em', marginLeft: '1em'}}>
-                        <select className="form-control" id="exampleFormControlSelect1">
-                          <option>10-20 min</option>
-                          <option>20 - 30 min</option>
-                          <option>30 - 45 min</option>
+                        <select className="form-control" id="exampleFormControlSelect1" name="difficulty" value={this.state.difficulty} onChange={this.onChange}>
+                          <option>Beginner</option>
+                          <option>Intermediate</option>
+                          <option>Expert</option>
                         </select>
                       </div>
                     </div>
 
-                    
+                    <br/>
 
+                    <div className="row">
+                      <div className="col-md-2" style={{marginTop: '0.5em', marginRight: '1em', marginLeft: '1em'}}>
+                        <label for="exampleFormControlSelect1">Type</label>
+                      </div>
+                      <div className="col-md-8" style={{marginRight: '1em', marginLeft: '1em'}}>
+                        <select className="form-control" id="exampleFormControlSelect1" name="type" value={this.state.type} onChange={this.onChange}>
+                          <option>Cardio</option>
+                          <option>Strength</option>
+                          <option>Stretching</option>
+                          <option>Power Lifting</option>
+                          <option>Olympic Weight Lifting</option>
+                        </select>
+                      </div>
+                    </div>
 
                     <br/>
 
-                    
+                    <div className="row">
+                      <div className="col-md-2" style={{marginTop: '0.5em', marginRight: '1em', marginLeft: '1em'}}>
+                        <label for="exampleFormControlSelect1">Mechanics</label>
+                      </div>
+                      <div className="col-md-8" style={{marginRight: '1em', marginLeft: '1em'}}>
+                        <select className="form-control" id="exampleFormControlSelect1" name="mechanics" value={this.state.mechanics} onChange={this.onChange}>
+                          <option>N/A</option>
+                          <option>Isolation</option>
+                          <option>Compound</option>
+                        </select>
+                      </div>
+                    </div>
 
                     <br/>
+
+                    <div className="row">
+                      <div className="col-md-2" style={{marginTop: '0.5em', marginRight: '1em', marginLeft: '1em'}}>
+                        <label for="exampleFormControlSelect1">Equipment</label>
+                      </div>
+                      <div className="col-md-8" style={{marginRight: '1em', marginLeft: '1em'}}>
+                        <input type="text" name="equipment" value={this.state.equipment} onChange={this.onChange} class="form-control" id="formGroupExampleInput" placeholder="Equipment needed for workout"/>
+                      </div>
+                    </div>
+
+                    <br/>
+
+                    <div className="row">
+                      <div className="col-md-2" style={{marginTop: '0.5em', marginRight: '1em', marginLeft: '1em'}}>
+                        <label for="exampleFormControlSelect1">Exercise Steps</label>
+                      </div>
+                      <div className="col-md-8" style={{marginRight: '1em', marginLeft: '1em'}}>
+                        <textarea type="text" name="excercise_steps" value={this.state.excercise_steps} onChange={this.onChange} class="form-control" id="formGroupExampleInput" placeholder="Equipment needed for workout"/>
+                      </div>
+                    </div>
 
                     </div>
                       <button type="submit" className="btn btn-primary"> <span role="img" aria-label="muscle">💪🏽</span> Generate Workout!</button>

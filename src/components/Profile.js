@@ -2,12 +2,17 @@ import React, { Component } from 'react'
 import jwt_decode from 'jwt-decode'
 import '../static/css/Profile.css'
 import david from '../static/images/rsz_Dave.jpg'
-
+import axios from 'axios'
 
 class Profile extends Component {
   constructor() {
     super()
     this.state = {
+        display_name: '',
+        title: '',
+        age: '',
+        bio: '',
+        gender: '',
         username: '',
         first_name: '',
         last_name: '',
@@ -27,6 +32,27 @@ class Profile extends Component {
         email: decoded.identity.email,
         id: decoded.identity.id,
         username: decoded.identity.username
+      })
+
+      let endpoint = 'profile/' + decoded.identity.id
+
+      axios.get(endpoint)
+      .then(response => {
+        console.log(JSON.stringify(response.data))
+        
+        this.setState({
+            display_name: response.data['profile_data']['nickname'],
+            title: response.data['profile_data']['title'],
+            age: response.data['profile_data']['age'],
+            bio: response.data['profile_data']['bio'],
+            gender: response.data['profile_data']['gender']
+          })
+          
+        this.setState({loading: false })
+      })
+      .catch(err => {
+        console.log(err)
+        this.setState({loading: false })
       })
     }
     catch(error){}
@@ -50,11 +76,11 @@ class Profile extends Component {
                         <div class="profile-head">
                             <h3>
                                 <strong>
-                                {this.state.username}
+                                {this.state.username} {this.state.display_name ? "(" + this.state.display_name + ")" : null }
                                 </strong>
                             </h3>
                             <h6>
-                                Collaborator
+                            {this.state.title ? this.state.title : null }
                             </h6>
                         </div>
                     </div>
@@ -91,6 +117,30 @@ class Profile extends Component {
                                     </div>
                                     <div class="col-md-8">
                                         <p>{this.state.email}</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-2">
+                                        <label>Age:</label>
+                                    </div>
+                                    <div class="col-md-8">
+                                        <p>{this.state.age ? this.state.age : <>blank</> }</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-2">
+                                        <label>Gender:</label>
+                                    </div>
+                                    <div class="col-md-8">
+                                        <p>{this.state.gender ? this.state.gender : <>blank</> }</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-2">
+                                        <label>Bio:</label>
+                                    </div>
+                                    <div class="col-md-8">
+                                        <p>{this.state.bio ? this.state.bio : <>blank</> }</p>
                                     </div>
                                 </div>
                             </div>
