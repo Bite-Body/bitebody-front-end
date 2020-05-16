@@ -2,8 +2,8 @@ import React, { Component } from 'react'
 import jwt_decode from 'jwt-decode'
 import Carousel from './Landing/Carousel'
 import '../static/css/Landing.css'
-import screenshot from '../static/images/opt_iphone.webp'
-import screenshot_ipad from '../static/images/opt_ipad.webp'
+import screenshot from '../static/images/iphone_scr.png'
+import screenshot_ipad from '../static/images/ipad_scr.png'
 var welcome = {
   fontSize: 50
 };

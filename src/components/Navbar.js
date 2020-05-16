@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Link, withRouter } from 'react-router-dom'
-import headerLogo from '../static/images/opt_logo.webp'
+import headerLogo from '../static/images/BiteBody_Logo_Navbar.png'
 import '../static/css/Navbar.css'
 
 class Navbar extends Component {
